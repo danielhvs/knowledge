@@ -1,8 +1,8 @@
 # Postgres
 
 # Links
-https://www.postgresql.org/docs/9.5/functions-json.html
-https://www.cybertec-postgresql.com/en/recursive-queries-postgresql/
+1. https://www.postgresql.org/docs/9.5/functions-json.html
+1. https://www.cybertec-postgresql.com/en/recursive-queries-postgresql/
 
 General info about the tables
 
