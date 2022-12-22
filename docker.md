@@ -1,5 +1,11 @@
 # Docker
 
+Login to [dockerhub](https://hub.docker.com/)
+
+```
+docker login
+```
+
 Copy stuff in
 
 ```
