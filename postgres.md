@@ -13,3 +13,27 @@ select column_name, is_nullable, data_type
    AND table_name   = 'thename';
 ```
 
+List databases 
+```
+\l
+```
+
+Connect to a database
+```
+\c db_name
+```
+
+List schemas
+```
+\dn
+```
+
+Describe tables (in a schema):
+```
+\dt schema_name.*
+```
+
+Describe a table (in a schema):
+```
+\d schema_name.table_name
+```
