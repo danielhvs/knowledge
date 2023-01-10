@@ -2,6 +2,8 @@
 1. https://hobo.house/2016/02/18/how-to-manually-clean-indexes-from-elasticsearch/
 
 # Elasticsearch
+
+Indices are similar to databases in SQL dbs.
 Sometimes you want to remove specific indices, you can use curl against the API to do this.  First, query the indices that are available:
 
 ```bash

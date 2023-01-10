@@ -1,5 +1,15 @@
 # Clojure
 
+## test
+
+```bash
+lein test :only namespace.bla.lol
+```
+
+```bash
+lein test :only namespace.bla.lol/test-function-name
+```
+
 ## flow-storm
 
 ```
