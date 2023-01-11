@@ -18,3 +18,9 @@ Exec stuff
 docker exec -it company_mongodb_1 bash
 ```
 
+Show processes
+
+```
+docker ps --no-trunc
+```
+
