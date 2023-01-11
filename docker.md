@@ -24,3 +24,10 @@ Show processes
 docker ps --no-trunc
 ```
 
+
+config file
+
+```
+/etc/default/docker
+```
+
