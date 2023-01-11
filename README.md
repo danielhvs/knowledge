@@ -3,3 +3,4 @@
 1. [elastic-search.md](elastic-search.md)
 1. [mongo.md](mongo.md)
 1. [postgres.md](postgres.md)
+1. [unix-tools.md](unix-tools.md)
