@@ -55,3 +55,11 @@ User
 SELECT current_user;
 
 ```
+
+Views
+```
+
+select viewname from pg_catalog.pg_views where viewname like '%bla%';
+
+```
+
