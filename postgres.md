@@ -25,7 +25,9 @@ Connect to a database
 
 List schemas
 ```
-\dn
+
+\dt
+
 ```
 
 Describe tables (in a schema):
@@ -36,4 +38,20 @@ Describe tables (in a schema):
 Describe a table (in a schema):
 ```
 \d schema_name.table_name
+
+```
+
+Connection
+```
+
+\conninfo
+
+```
+
+User
+
+```
+
+SELECT current_user;
+
 ```
