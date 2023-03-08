@@ -63,3 +63,40 @@ select viewname from pg_catalog.pg_views where viewname like '%bla%';
 
 ```
 
+indexes
+
+
+```
+
+SELECT
+    tablename,
+    indexname,
+    indexdef
+FROM
+    pg_indexes
+WHERE
+    schemaname = 'schemaname'
+ORDER BY
+    tablename,
+    indexname;
+
+```
+
+see connections
+
+```
+SELECT * FROM pg_stat_activity;
+```
+
+kill connections
+
+```
+SELECT
+	pg_terminate_backend(pg_stat_activity.pid)
+FROM
+	pg_stat_activity
+WHERE
+	pg_stat_activity.datname = 'databasename'
+	AND pid <> pg_backend_pid();
+```
+
