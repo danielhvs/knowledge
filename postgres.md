@@ -98,5 +98,14 @@ FROM
 WHERE
 	pg_stat_activity.datname = 'databasename'
 	AND pid <> pg_backend_pid();
+
+```
+
+select as json
+
+```
+
+select row_to_json(row) from <schema>.<tablename> row
+
 ```
 
