@@ -109,3 +109,13 @@ select row_to_json(row) from <schema>.<tablename> row
 
 ```
 
+
+
+types
+
+```
+
+SELECT pg_typeof(your_variable);
+
+```
+
