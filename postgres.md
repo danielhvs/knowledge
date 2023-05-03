@@ -105,6 +105,7 @@ select as json
 
 ```
 
+SELECT jsonb_pretty(to_jsonb(json_agg(table_name))) FROM table_name;
 select row_to_json(row) from <schema>.<tablename> row
 
 ```
