@@ -10,6 +10,12 @@ Sometimes you want to remove specific indices, you can use curl against the API 
 curl -GET http://localhost:9200/_cat/indices
 ```
 
+Search:
+
+```
+curl -GET http://localhost:9200/<index-name>/_search?pretty=true
+```
+
 You can delete them by name:
 
 ```bash
