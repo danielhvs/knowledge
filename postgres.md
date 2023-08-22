@@ -133,3 +133,18 @@ WHERE
   AND pid <> pg_backend_pid ();
 ```
 
+select connections
+
+```
+SELECT
+  pg_stat_activity.datname AS database_name,
+  pg_stat_activity.pid,
+  pg_stat_activity.usename AS username,
+  pg_stat_activity.state,
+  now () - pg_stat_activity.query_start AS duration
+FROM
+  pg_stat_activity
+WHERE
+  pg_stat_activity.state = 'idle';
+```
+
