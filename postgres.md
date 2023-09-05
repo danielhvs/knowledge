@@ -146,5 +146,16 @@ FROM
   pg_stat_activity
 WHERE
   pg_stat_activity.state = 'idle';
+
+```
+
+Procedure names and content:
+
+```
+SELECT routine_schema As schema_name,
+routine_name As procedure_name,
+routine_definition
+FROM information_schema.routines
+WHERE routine_type = 'PROCEDURE';
 ```
 
