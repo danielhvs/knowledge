@@ -9,3 +9,4 @@
 1. [unix-tools.md](unix-tools.md)
 1. [network.md](network.md)
 1. [siege.md](siege.md)
+1. [prometheus.md](prometheus.md)
