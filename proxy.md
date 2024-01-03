@@ -1,6 +1,6 @@
 proxy `manager`: squid: /etc/squid/squid.conf
 
-`apt` arquivo: /etc/apt/apt.conf.d/proxy.conf
+`apt` file: /etc/apt/apt.conf.d/proxy.conf
 
 `npm` proxy config: npm config  set proxy http://localhost:3128
 
