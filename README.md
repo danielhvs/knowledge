@@ -9,5 +9,6 @@
 1. [oracle.md](oracle.md)
 1. [postgres.md](postgres.md)
 1. [prometheus.md](prometheus.md)
+1. [proxy.md](proxy.md)
 1. [siege.md](siege.md)
 1. [unix-tools.md](unix-tools.md)
