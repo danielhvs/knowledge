@@ -1,4 +1,4 @@
-proxy `manager` /etc/squid/squid.conf
+proxy `manager`: squid: /etc/squid/squid.conf
 
 `apt` arquivo: /etc/apt/apt.conf.d/proxy.conf
 
@@ -8,8 +8,7 @@ proxy `manager` /etc/squid/squid.conf
 - via config: $HOME/.curlrc
 - via cli: curl --proxy http://localhost:3128
 
-`github` `ssh`: .ssh/config: 
-
+`github` `ssh`: $HOME/.ssh/config: 
 ```
 Host github.com
   Hostname ssh.github.com
@@ -18,9 +17,7 @@ Host github.com
   ProxyCommand nc -x localhost:3128 -Xconnect %h %p
 ```
 
-`wget`
-~ cat .wgetrc
-
+`wget` $HOME/.wgetrc
 ```
 use_proxy = on
 http_proxy = http://localhost:3128
