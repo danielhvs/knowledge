@@ -1,4 +1,5 @@
 1. [clojure.md](clojure.md)
+1. [diagram-tools.md](diagram-tools.md)
 1. [docker.md](docker.md)
 1. [elastic-search.md](elastic-search.md)
 1. [firewall.md](firewall.md)
