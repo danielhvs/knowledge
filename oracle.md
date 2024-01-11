@@ -32,3 +32,11 @@ WHERE name = 'caseSENSITIVEprocName'
 ORDER BY line
 ```
 
+limit: FETCH FIRST n ROWS ONLY
+example
+```
+select * from log
+order by created_at desc 
+FETCH FIRST 5 ROWS ONLY
+```
+
