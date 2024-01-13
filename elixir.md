@@ -3,7 +3,7 @@ Tools and deps:
 `asdf` 
 
 ```
-sudo apt-get install xsltproc fop libncurses5-dev -y
+sudo apt-get install inotify-tools xsltproc fop libncurses5-dev -y
 ```
 
 compatibility-and-deprecations
