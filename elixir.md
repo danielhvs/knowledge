@@ -1,6 +1,19 @@
 Tools and deps:
 ==========
 
+map,filter,reduce
+
+map:
+list = [1, 2, 3, 4]
+Enum.map(list, fn x -> x * 2 end)
+
+filter:
+Enum.filter(list, fn x -> x > 2 end)
+
+reduce
+Enum.reduce(list, fn x, acc -> x + acc end)
+
+
 `asdf` 
 
 ```
