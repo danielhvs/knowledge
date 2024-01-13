@@ -19,3 +19,17 @@ Create a new phoenix project using a specific db. if not set it will use postgre
 mix phx.new forum --database sqlite3
 ```
 
+Phoenix
+
+router:
+get "/", PageController, :xfn
+
+
+controller:
+This will call PageController.xfn function
+
+html:
+def xfn ...
+    render(conn, :yyy, layout: false)
+Then the :yyy atom will point  to controllers/page_html/yyy.html.heex
+
