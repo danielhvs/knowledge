@@ -1,17 +1,50 @@
 Tools and deps:
 ==========
 
+coll:
+tuples == vectors syntax = {1, 2, 3}
+lists == linked lists syntax = [1,2,3]
+
+`create` props to maps: use `put`
+map = %{foo: "bar", hello: "world"}
+map2 = Map.put(map, :lol, "baz")
+
+`update` props to maps: use `|`
+map = %{foo: "bar", hello: "world"}
+%{foo: "bar", hello: "world"}
+%{map | foo: "baz"}
+%{foo: "baz", hello: "world"}
+
 map,filter,reduce
 
 map:
 list = [1, 2, 3, 4]
 Enum.map(list, fn x -> x * 2 end)
+list |> Enum.map(fn x -> x * 2 end)
 
 filter:
 Enum.filter(list, fn x -> x > 2 end)
+list |> Enum.filter(fn x -> x > 2 end)
 
 reduce
 Enum.reduce(list, fn x, acc -> x + acc end)
+list |> Enum.reduce(fn x, acc -> x + acc end)
+
+head/tail
+hd [3.14, :pie, "Apple"]
+3.14
+tl [3.14, :pie, "Apple"]
+[:pie, "Apple"]
+
+destructuring
+[head | tail] = [3.14, :pie, "Apple"]
+[3.14, :pie, "Apple"]
+head
+3.14
+tail
+[:pie, "Apple"]
+
+[head | tail] = [3.14, :pie, "Apple"]
 
 
 `asdf` 
