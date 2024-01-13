@@ -1,9 +1,43 @@
-Tools and deps:
+Language
 ==========
+
+string interpolation
+name = "Sean"
+> "Sean"
+"Hello #{name}"
+> "Hello Sean"
+
+string concatenation
+name = "Sean"
+> "Sean"
+"Hello " <> name
+> "Hello Sean"
 
 coll:
 tuples == vectors syntax = {1, 2, 3}
 lists == linked lists syntax = [1,2,3]
+
+list concat: ++
+list subtract: --
+
+pattern matching
+{:ok, value} = {:ok, "Successful!"}
+> {:ok, "Successful!"}
+value
+> "Successful!"
+
+pin operator for pattern mathing:
+everything is an equation so 1 = x will fail if x not-eq 1
+use ^x to "test" the pattern
+use ^ in "vars"
+x = 1
+> 1
+^x = 2
+> ** (MatchError) no match of right hand side value: 2
+{x, ^x} = {2, 1}
+> {2, 1}
+x
+> 2
 
 `create` props to maps: use `put`
 map = %{foo: "bar", hello: "world"}
@@ -45,6 +79,9 @@ tail
 [:pie, "Apple"]
 
 [head | tail] = [3.14, :pie, "Apple"]
+
+Tools and deps:
+==========
 
 
 `asdf` 
