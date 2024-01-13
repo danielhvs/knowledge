@@ -159,3 +159,12 @@ FROM information_schema.routines
 WHERE routine_type = 'PROCEDURE';
 ```
 
+use psql as postgres user in os:
+```
+sudo -u postgres psql
+postgres=# \password postgres
+Enter new password: 
+Enter it again: 
+postgres=# \q
+```
+
