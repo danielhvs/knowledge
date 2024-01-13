@@ -2,6 +2,7 @@
 1. [diagram-tools.md](diagram-tools.md)
 1. [docker.md](docker.md)
 1. [elastic-search.md](elastic-search.md)
+1. [elixir.md](elixir.md)
 1. [firewall.md](firewall.md)
 1. [java.md](java.md)
 1. [keyboard.md](keyboard.md)
