@@ -23,12 +23,14 @@ mix phx.new forum --database sqlite3
 Phoenix
 ==========
 
+```
 router:
 get "/", PageController, :xfn
     This will call PageController.xfn function
         def xfn ...
             render(conn, :yyy, layout: false)
                 Then the :yyy atom will point  to controllers/page_html/yyy.html.heex
+```
 
 Create a CRUD:
 ==========
