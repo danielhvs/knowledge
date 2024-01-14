@@ -1,6 +1,18 @@
 Language
 ==========
 
+iex example:
+```
+lol = fn map ->
+  with {:ok, width} <- Map.fetch(map, :width),
+       {:ok, height} <- Map.fetch(map, :height) do
+    {:ok, width * height}
+  end
+end
+lol.(%{width: 123, height: 999})
+lol.(%{width2: 123, height: 999})
+```
+
 string interpolation
 name = "Sean"
 > "Sean"
@@ -38,6 +50,18 @@ x = 1
 > {2, 1}
 x
 > 2
+
+`pin` with `case`
+pie = 3.14
+> 3.14
+case "cherry pie" do
+  ^pie -> "Not so tasty"
+  pie -> "I bet #{pie} is tasty"
+end
+> "I bet cherry pie is tasty"
+
+`cond`
+When we need to match conditions rather than values 
 
 `create` props to maps: use `put`
 map = %{foo: "bar", hello: "world"}
