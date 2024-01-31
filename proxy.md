@@ -2,7 +2,12 @@ proxy `manager`: squid: /etc/squid/squid.conf
 
 `apt` file: /etc/apt/apt.conf.d/proxy.conf
 
-`npm` proxy config: npm config  set proxy http://localhost:3128
+```
+Acquire::http::Proxy "http://user:password@10.70.124.16:3128/";
+Acquire::https::Proxy "http://user:password@10.70.124.16:3128/";
+```
+
+`npm` proxy config: npm config set proxy http://localhost:3128
 
 `curl`
 - via config: $HOME/.curlrc
