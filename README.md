@@ -6,6 +6,7 @@
 1. [elixir.md](elixir.md)
 1. [emacs.md](emacs.md)
 1. [firewall.md](firewall.md)
+1. [hd-cleanup.md](hd-cleanup.md)
 1. [java.md](java.md)
 1. [keyboard.md](keyboard.md)
 1. [mongo.md](mongo.md)
