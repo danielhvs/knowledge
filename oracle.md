@@ -40,3 +40,11 @@ order by created_at desc
 FETCH FIRST 5 ROWS ONLY
 ```
 
+
+Execute procedure:
+```
+begin 
+    schema.procedure_name(); 
+end;
+```
+
