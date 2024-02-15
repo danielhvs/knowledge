@@ -30,3 +30,11 @@ https_proxy = http://localhost:3128
 ftp_proxy = http://localhost:3128
 ```
 
+
+snap
+```
+sudo snap set system proxy.http="http://localhost:3128"
+sudo snap set system proxy.https="http://localhost:3128"
+```
+
+
