@@ -21,3 +21,6 @@ user> # trace are for fn
 user> # try ^{:trace/when (<= 2 i 4)}
 ```
 
+edn file java config
+
+set up JAVA_HOME env var
