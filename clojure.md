@@ -24,3 +24,9 @@ user> # try ^{:trace/when (<= 2 i 4)}
 edn file java config
 
 set up JAVA_HOME env var
+
+deps.end
+
+local files
+
+https://clojure.org/reference/deps_edn#deps_local_root
