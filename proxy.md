@@ -30,17 +30,29 @@ https_proxy = http://localhost:3128
 ftp_proxy = http://localhost:3128
 ```
 
-
 snap
 ```
 sudo snap set system proxy.http="http://localhost:3128"
 sudo snap set system proxy.https="http://localhost:3128"
 ```
 
-env vars: $HOME/.bash_profile
+env vars: $HOME/.custom_bash_profile
 ```
 export http_proxy="http://localhost:3128"
 export https_proxys="https://localhost:3128"
 export ftp_proxy="ftp://localhost:3128"
+```
+
+
+docker: ~/.docker/config.json
+add:
+```
+	"proxies": {
+		"default": {
+			"httpProxy": "http://localhost:3128",
+			"httpsProxy": "https://localhost:3128",
+			"noProxy": "*.test.example.com,.example.org,127.0.0.0/8"
+		}
+	}
 ```
 
