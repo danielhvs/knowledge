@@ -37,4 +37,10 @@ sudo snap set system proxy.http="http://localhost:3128"
 sudo snap set system proxy.https="http://localhost:3128"
 ```
 
+env vars: $HOME/.bash_profile
+```
+export http_proxy="http://localhost:3128"
+export https_proxys="https://localhost:3128"
+export ftp_proxy="ftp://localhost:3128"
+```
 
