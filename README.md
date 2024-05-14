@@ -17,3 +17,4 @@
 1. [proxy.md](proxy.md)
 1. [siege.md](siege.md)
 1. [unix-tools.md](unix-tools.md)
+1. [sqlite](sqlite.md)
