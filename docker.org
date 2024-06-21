@@ -1,0 +1,68 @@
+* Login to [dockerhub](https://hub.docker.com/)
+
+#+begin_src bash
+docker login
+#+end_src
+
+* Copy stuff in
+
+#+begin_src bash :results output
+docker cp dev-resources/bla.js company_mongodb_1:/
+#+end_src
+
+* Exec stuff
+
+#+begin_src bash :results output
+docker exec -it company_mongodb_1 bash
+#+end_src
+
+* Show processes
+
+#+begin_src bash :results output
+docker ps --no-trunc
+#+end_src
+
+* Config file
+
+/etc/default/docker
+
+* Remove all
+#+begin_src bash :results output
+docker rm $(docker ps -aq)
+#+end_src
+
+* Show processes
+#+begin_src bash :results output
+docker ps -a
+#+end_src
+
+* To remove all Docker images from your local machine, you can use the following command in your terminal:
+
+#+begin_src bash
+docker rmi $(docker images -a -q)
+#+end_src
+
+* Show all images
+#+begin_src bash
+docker images -a -q
+#+end_src
+
+* Remove a process
+#+begin_src bash
+docker rm 27fb0e7cacca
+#+end_src
+
+* Stop a process
+#+begin_src bash
+docker stop 27fb0e7cacca
+#+end_src
+
+* Up a process (after rm)
+#+begin_src bash
+docker compose -f file.yml -f file2.yml -p project up container-name
+#+end_src
+
+* Start a process
+#+begin_src bash
+docker compose -f file.yml -f file2.yml -p project start container-name
+#+end_src
