@@ -16,12 +16,6 @@ docker cp dev-resources/bla.js company_mongodb_1:/
 docker exec -it company_mongodb_1 bash
 #+end_src
 
-* Show processes
-
-#+begin_src bash :results output
-docker ps --no-trunc
-#+end_src
-
 * Config file
 
 /etc/default/docker
@@ -36,6 +30,10 @@ docker rm $(docker ps -aq)
 docker ps -a
 #+end_src
 
+#+begin_src bash :results output
+docker ps --no-trunc
+#+end_src
+
 * To remove all Docker images from your local machine, you can use the following command in your terminal:
 
 #+begin_src bash
@@ -44,7 +42,7 @@ docker rmi $(docker images -a -q)
 
 * Show all images
 #+begin_src bash
-docker images -a -q
+docker images -a
 #+end_src
 
 * Remove a process
@@ -65,4 +63,11 @@ docker compose -f file.yml -f file2.yml -p project up container-name
 * Start a process
 #+begin_src bash
 docker compose -f file.yml -f file2.yml -p project start container-name
+#+end_src
+
+
+* To SSH into a Docker container that has been started from an image, you would typically use the =exec= command instead of =ssh=. Here's how you can do it for the =fidati-fe= image, assuming =container-name= is the name of the running container:
+
+#+begin_src bash
+docker exec -it infallible_shirley bash
 #+end_src
