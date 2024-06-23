@@ -50,6 +50,17 @@ docker images -a
 docker rm 27fb0e7cacca
 #+end_src
 
+* Port mapping
+-p exposed-port:internal-port
+#+begin_src bash
+docker run -p 3448:3448 fidati-fe
+#+end_src
+
+* Run an image
+#+begin_src bash
+docker run fidati-be
+#+end_src
+
 * Stop a process
 #+begin_src bash
 docker stop 27fb0e7cacca
