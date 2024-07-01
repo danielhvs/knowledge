@@ -33,3 +33,11 @@ curl -XDELETE http://localhost:9200/_all
 `must` means: The clause (query) must appear in matching documents. These clauses must match, like logical `AND`
 
 `should` means: At least one of these clauses must match, like logical `OR`
+
+Search in kibana
+
+{
+  "wildcard": {
+    "company_app.message": "the bla bla*"
+  }
+}
