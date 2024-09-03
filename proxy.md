@@ -1,19 +1,25 @@
 proxy `manager`: squid: /etc/squid/squid.conf
 
+/etc/squid/conf.d/debian.conf
+
+
 `apt` file: /etc/apt/apt.conf.d/proxy.conf
 
 ```
 Acquire::http::Proxy "http://user:password@10.70.124.16:3128/";
 Acquire::https::Proxy "http://user:password@10.70.124.16:3128/";
+
+
+sudo apt update -oAcquire::http::Proxy= -oAcquire::https::Proxy=
 ```
 
 `npm` proxy config: npm config set proxy http://localhost:3128
 
 `curl`
-- via config: $HOME/.curlrc
+- via config: /home/danielhabib/.curlrc
 - via cli: curl --proxy http://localhost:3128
 
-`github` `ssh`: $HOME/.ssh/config: 
+`github` `ssh`: /home/danielhabib/.ssh/config : 
 ```
 Host github.com
   Hostname ssh.github.com
@@ -22,7 +28,7 @@ Host github.com
   ProxyCommand nc -x localhost:3128 -Xconnect %h %p
 ```
 
-`wget` $HOME/.wgetrc
+`wget` /home/danielhabib/.wgetrc
 ```
 use_proxy = on
 http_proxy = http://localhost:3128
@@ -36,7 +42,12 @@ sudo snap set system proxy.http="http://localhost:3128"
 sudo snap set system proxy.https="http://localhost:3128"
 ```
 
-env vars: $HOME/.custom_bash_profile
+env vars: 
+
+touch 
+
+/home/danielhabib/.custom_bash_profile
+
 ```
 export http_proxy="http://localhost:3128"
 export https_proxys="https://localhost:3128"
