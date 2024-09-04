@@ -1,0 +1,23 @@
+* Network
+** check which process is using a given `port`:
+
+#+begin_src sh
+netstat -anpe | grep "8010" | grep "LISTEN"
+#+end_src
+
+** get it's pid:
+#+begin_src sh
+netstat -anpe | grep "8010" | grep "LISTEN" | awk '{print $NF}' | cut -d'/' -f1
+#+end_src
+
+** kill it already:
+#+begin_src sh
+netstat -anpe | grep "8010" | grep "LISTEN" | awk '{print $NF}' | cut -d'/' -f1 | xargs kill
+#+end_src
+
+
+* Wireless Adapter
+
+https://github.com/aircrack-ng/rtl8188eus
+
+make clean && make && sudo make install
