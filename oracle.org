@@ -1,0 +1,53 @@
+* some metadata
+#+begin_src sql
+select
+  column_name,
+  table_name,
+  nullable,
+  data_type,
+  data_length,
+  data_precision,
+  data_scale
+from
+  all_tab_columns
+where
+  table_name = 'the-column-name'
+#+end_src
+
+* all metadata
+#+begin_src sql
+select
+  *
+from
+  all_tab_columns
+where
+  table_name = 'the-column-name'
+#+end_src
+
+
+* select procedure contents:
+#+begin_src sql
+SELECT text
+FROM user_source
+WHERE name = 'caseSENSITIVEprocName'
+ORDER BY line
+#+end_src
+
+* limit: FETCH FIRST n ROWS ONLY
+#+begin_src sql
+select * from log
+order by created_at desc
+FETCH FIRST 5 ROWS ONLY
+#+end_src
+
+
+* Execute procedure:
+#+begin_src sql
+begin
+    schema.procedure_name()
+end
+#+end_src
+
+* connections
+
+SELECT s.sid, s.serial#, s.status, s.osuser, s.machine, s.program FROM v$session s where osuser not in('oracle', 'eco')
