@@ -1,0 +1,4 @@
+* logs
+#+begin_src bash :results output
+journalctl | head -n10
+#+end_src
