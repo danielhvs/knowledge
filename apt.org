@@ -1,0 +1,5 @@
+* list installed
+#+begin_src sh :results output
+export SUDO_ASKPASS=/home/danielhabib/bin/ssh-askpass.sh
+sudo apt list --installed
+#+end_src
