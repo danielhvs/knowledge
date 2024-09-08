@@ -15,7 +15,7 @@
 1. [network.org](network.org)
 1. [r](r.md)
 1. [oracle.org](oracle.org)
-1. [postgres.md](postgres.md)
+1. [postgres.org](postgres.org)
 1. [prometheus.md](prometheus.md)
 1. [proxy.md](proxy.md)
 1. [siege.md](siege.md)

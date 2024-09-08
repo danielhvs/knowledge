@@ -13,7 +13,7 @@ select column_name, is_nullable, data_type
    AND table_name   = 'thename';
 ```
 
-List databases 
+List databases
 ```
 \l
 ```
@@ -92,12 +92,12 @@ kill connections
 
 ```
 SELECT
-	pg_terminate_backend(pg_stat_activity.pid)
+    pg_terminate_backend(pg_stat_activity.pid)
 FROM
-	pg_stat_activity
+    pg_stat_activity
 WHERE
-	pg_stat_activity.datname = 'databasename'
-	AND pid <> pg_backend_pid();
+    pg_stat_activity.datname = 'databasename'
+    AND pid <> pg_backend_pid();
 
 ```
 
@@ -163,8 +163,26 @@ use psql as postgres user in os:
 ```
 sudo -u postgres psql
 postgres=# \password postgres
-Enter new password: 
-Enter it again: 
+Enter new password:
+Enter it again:
 postgres=# \q
 ```
 
+
+4. By default, PostgreSQL sets up a role/user named "postgres" that you can use to access the database. To switch to this user, run:
+
+   #+begin_src
+   sudo -i -u postgres
+   #+end_src
+
+5. Now you can access the PostgreSQL shell:
+
+   #+begin_src
+   psql
+   #+end_src
+
+   To exit the PostgreSQL shell, type:
+
+   #+begin_src
+   \q
+   #+end_src
