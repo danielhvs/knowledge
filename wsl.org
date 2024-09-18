@@ -1,0 +1,10 @@
+* fix blink in emacs `windows (wsl actually)`
+PS C:\Users\Administrador> wsl --shutdown
+PS C:\Users\Administrador> wsl
+/mnt/c/Users/Administrador emacs
+libGL error: MESA-LOADER: failed to open swrast: /usr/lib/dri/swrast_dri.so: cannot open shared object file: No such file or directory (search paths /usr/lib/x86_64-linux-gnu/dri:\$${ORIGIN}/dri:/usr/lib/dri, suffix _dri)
+libGL error: failed to load driver: swrast
+
+^ ignore or fix the above.
+
+Should work.
