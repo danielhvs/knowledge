@@ -8,8 +8,7 @@
 #+begin_src sql :results output
 select column_name, is_nullable, data_type
   FROM information_schema.columns
- WHERE table_schema = 'theschamaname'
-   AND table_name   = 'thename';
+ WHERE table_schema = 'terraontrack'
 #+end_src
 
 * List databases
@@ -146,4 +145,12 @@ psql
 * To exit the PostgreSQL shell, type:
 #+begin_src bash
 \q
+#+end_src
+
+* All table names
+#+begin_src sql
+SELECT table_name
+FROM information_schema.tables
+WHERE table_schema = 'public'
+ORDER BY table_name;
 #+end_src
