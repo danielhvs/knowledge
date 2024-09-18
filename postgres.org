@@ -1,73 +1,52 @@
-# Postgres
-
+* Links
 # Links
 1. https://www.postgresql.org/docs/9.5/functions-json.html
 1. https://www.cybertec-postgresql.com/en/recursive-queries-postgresql/
 
-General info about the tables
+* General info about the tables
 
-```sql
+#+begin_src sql :results output
 select column_name, is_nullable, data_type
   FROM information_schema.columns
  WHERE table_schema = 'theschamaname'
    AND table_name   = 'thename';
-```
+#+end_src
 
-List databases
-```
+* List databases
 \l
-```
 
-Connect to a database
-```
+* Connect to a database
 \c db_name
-```
 
-List schemas
-```
-
+* List schemas
 \dt
 
-```
-
-Describe tables (in a schema):
-```
+* Describe tables (in a schema):
 \dt schema_name.*
-```
 
-Describe a table (in a schema):
-```
+* Describe a table (in a schema):
 \d schema_name.table_name
 
-```
-
-Connection
-```
-
+* Connection
 \conninfo
 
-```
+* User
 
-User
-
-```
-
+#+begin_src sql :results output
 SELECT current_user;
+#+end_src
 
-```
+* Views
+#+begin_src sql :results output
+select viewname
+from pg_catalog.pg_views
+where viewname like '%bla%';
+#+end_src
 
-Views
-```
+* indexes
 
-select viewname from pg_catalog.pg_views where viewname like '%bla%';
-
-```
-
-indexes
-
-
-```
-
+#+begin_src sql :results output
+  
 SELECT
     tablename,
     indexname,
@@ -79,18 +58,15 @@ WHERE
 ORDER BY
     tablename,
     indexname;
+#+end_src
 
-```
-
-see connections
-
-```
+* see connections
+#+begin_src sql :results output
 SELECT * FROM pg_stat_activity;
-```
+#+end_src
 
-kill connections
-
-```
+* kill connections
+#+begin_src sql :results output
 SELECT
     pg_terminate_backend(pg_stat_activity.pid)
 FROM
@@ -99,31 +75,22 @@ WHERE
     pg_stat_activity.datname = 'databasename'
     AND pid <> pg_backend_pid();
 
-```
+#+end_src
 
-select as json
-
-```
-
+* select as json
+#+begin_src sql :results output
 SELECT jsonb_pretty(to_jsonb(json_agg(table_name))) FROM table_name;
 select row_to_json(row) from <schema>.<tablename> row
+#+end_src
 
-```
+* types
 
-
-
-types
-
-```
-
+#+begin_src sql :results output
 SELECT pg_typeof(your_variable);
+#+end_src
 
-```
-
-
-terminate idle connections
-
-```
+* terminate idle connections
+#+begin_src sql :results output
 SELECT
   pg_terminate_backend (pg_stat_activity.pid)
 FROM
@@ -131,11 +98,10 @@ FROM
 WHERE
   pg_stat_activity.datname = 'target_database'
   AND pid <> pg_backend_pid ();
-```
+#+end_src
 
-select connections
-
-```
+* select connections
+#+begin_src sql :results output
 SELECT
   pg_stat_activity.datname AS database_name,
   pg_stat_activity.pid,
@@ -146,21 +112,19 @@ FROM
   pg_stat_activity
 WHERE
   pg_stat_activity.state = 'idle';
+#+end_src
 
-```
-
-Procedure names and content:
-
-```
+* Procedure names and content:
+#+begin_src sql :results output
 SELECT routine_schema As schema_name,
 routine_name As procedure_name,
 routine_definition
 FROM information_schema.routines
 WHERE routine_type = 'PROCEDURE';
-```
+#+end_src
 
-use psql as postgres user in os:
-```
+* use psql as postgres user in os:
+```bash
 sudo -u postgres psql
 postgres=# \password postgres
 Enter new password:
@@ -168,21 +132,18 @@ Enter it again:
 postgres=# \q
 ```
 
+* By default, PostgreSQL sets up a role/user named "postgres" that you can use to access the database. To switch to this user, run:
+#+begin_src bash
+sudo -i -u postgres
+#+end_src
 
-4. By default, PostgreSQL sets up a role/user named "postgres" that you can use to access the database. To switch to this user, run:
+* Now you can access the PostgreSQL shell:
 
-   #+begin_src
-   sudo -i -u postgres
-   #+end_src
+#+begin_src bash
+psql
+#+end_src
 
-5. Now you can access the PostgreSQL shell:
-
-   #+begin_src
-   psql
-   #+end_src
-
-   To exit the PostgreSQL shell, type:
-
-   #+begin_src
-   \q
-   #+end_src
+* To exit the PostgreSQL shell, type:
+#+begin_src bash
+\q
+#+end_src
