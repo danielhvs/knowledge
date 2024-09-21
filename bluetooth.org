@@ -13,29 +13,15 @@ export SUDO_ASKPASS=/home/danielhabib/bin/ssh-askpass.sh
 sudo systemctl start bluetooth
 #+end_src
 
-* Scan for available devices:
+* Enter the cli interface:
 
 #+begin_src bash :results output
-bluetoothctl scan on
+bluetoothctl
 #+end_src
 
-* Once you see your phone's MAC address and name, pair with the device:
-
-#+begin_src bash :results output
-# Replace =[MAC_ADDRESS]= with your phone's MAC address.
-bluetoothctl pair [MAC_ADDRESS]
-#+end_src
-
-* After successfully pairing, trust the device if needed:
-
-#+begin_src bash :results output
-bluetoothctl trust [MAC_ADDRESS]
-#+end_src
-
-* Connect the device:
-
-#+begin_src bash :results output
-bluetoothctl connect [MAC_ADDRESS]
-#+end_src
-
-
+** make device discoverable (press and hold both for 6 seconds for example)
+** run command `scan on`
+** find the device
+** run command `trust [MAC]`
+** run command `pair [MAC]`
+** DONE
