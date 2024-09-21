@@ -1,0 +1,41 @@
+https://askubuntu.com/questions/1215009/ubuntu-18-04-cannot-connect-bluetooth-to-android-phone
+
+* Check if Bluetooth is enabled:
+
+#+begin_src bash :results output
+systemctl is-active bluetooth
+#+end_src
+
+* If it's not active, enable it:
+
+#+begin_src bash :results output
+export SUDO_ASKPASS=/home/danielhabib/bin/ssh-askpass.sh
+sudo systemctl start bluetooth
+#+end_src
+
+* Scan for available devices:
+
+#+begin_src bash :results output
+bluetoothctl scan on
+#+end_src
+
+* Once you see your phone's MAC address and name, pair with the device:
+
+#+begin_src bash :results output
+# Replace =[MAC_ADDRESS]= with your phone's MAC address.
+bluetoothctl pair [MAC_ADDRESS]
+#+end_src
+
+* After successfully pairing, trust the device if needed:
+
+#+begin_src bash :results output
+bluetoothctl trust [MAC_ADDRESS]
+#+end_src
+
+* Connect the device:
+
+#+begin_src bash :results output
+bluetoothctl connect [MAC_ADDRESS]
+#+end_src
+
+

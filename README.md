@@ -1,5 +1,5 @@
 1. [apt.org](apt.org)
-1. [bluetooth.md](bluetooth.md)
+1. [bluetooth.org](bluetooth.org)
 1. [clojure.md](clojure.md)
 1. [diagram-tools.md](diagram-tools.md)
 1. [docker.org](docker.org)
