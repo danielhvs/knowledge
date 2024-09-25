@@ -45,7 +45,7 @@ where viewname like '%bla%';
 * indexes
 
 #+begin_src sql :results output
-  
+
 SELECT
     tablename,
     indexname,
@@ -153,4 +153,10 @@ SELECT table_name
 FROM information_schema.tables
 WHERE table_schema = 'public'
 ORDER BY table_name;
+#+end_src
+
+
+* functions source code
+#+begin_src sql
+select proname,prosrc from pg_proc where proname= 'insert_app_alert'
 #+end_src
