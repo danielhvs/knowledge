@@ -158,5 +158,5 @@ ORDER BY table_name;
 
 * functions source code
 #+begin_src sql
-select proname,prosrc from pg_proc where proname= 'insert_app_alert'
+select prosrc from pg_proc where proname= 'insert_app_alert'
 #+end_src
