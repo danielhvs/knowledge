@@ -23,3 +23,4 @@
 1. [unix-tools.md](unix-tools.md)
 1. [wsl.org](wsl.org)
 1. [glib-c-ubuntu.org](glib-c-ubuntu.org)
+1. [gnu-utils.org](gnu-utils.org)
