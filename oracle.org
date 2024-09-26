@@ -24,7 +24,6 @@ where
   table_name = 'the-column-name'
 #+end_src
 
-
 * select procedure contents:
 #+begin_src sql
 SELECT text
@@ -40,7 +39,6 @@ order by created_at desc
 FETCH FIRST 5 ROWS ONLY
 #+end_src
 
-
 * Execute procedure:
 #+begin_src sql
 begin
@@ -50,4 +48,14 @@ end
 
 * connections
 
+#+begin_src sql
 SELECT s.sid, s.serial#, s.status, s.osuser, s.machine, s.program FROM v$session s where osuser not in('oracle', 'eco')
+#+end_src
+
+#+RESULTS:
+: sid  | serial# | status   | osuser           | machine       | program         
+: -----+---------+----------+------------------+---------------+-----------------
+: 31   | 10213   | INACTIVE | danielhabib      | DNBSCDC289646 | JDBC Thin Client
+: 1159 | 2405    | INACTIVE | henriqueda.silva | DNBSCDC289770 | SQL Developer   
+: 1180 | 40863   | ACTIVE   | danielhabib      | DNBSCDC289646 | JDBC Thin Client
+: 4011 | 15641   | INACTIVE | joao.katayama    | DNBSCDC289666 | SQL Developer   
