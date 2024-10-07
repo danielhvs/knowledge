@@ -160,3 +160,52 @@ ORDER BY table_name;
 #+begin_src sql
 select prosrc from pg_proc where proname= 'insert_app_alert'
 #+end_src
+
+#+RESULTS:
+#+begin_example
+prosrc
+------------------------------------------------------------------------------------------------------
+
+DECLARE
+    new_geom        geometry;
+    new_id_aoi      int;
+    allowed_id_user int;
+    super_admin_id  int;
+    verified        boolean;
+BEGIN
+    new_geom := st_setsrid(st_makepoint(p_long, p_lat), 4326);
+    SELECT id_aoi, geom
+    INTO new_id_aoi
+    FROM areas_of_interest
+    WHERE st_intersects(new_geom, geom);
+
+    -- role aoi-admin or user
+    SELECT rid_user
+    INTO allowed_id_user
+    FROM aoi_users
+    WHERE rid_aoi = new_id_aoi
+      AND rid_user = p_rid_user
+      AND rid_aoi_role IN (1, 2);
+
+    -- super-admin
+    SELECT id
+    INTO super_admin_id
+    FROM users
+    WHERE super_admin = true
+      AND id = p_rid_user;
+
+    IF new_id_aoi IS NOT NULL AND (allowed_id_user IS NOT NULL OR super_admin_id IS NOT NULL) THEN
+        verified := true;
+    ELSE
+        verified := false;
+    END IF;
+
+    INSERT INTO app_alerts AS aa
+    (rid_user, id_aoi, descr, lat, long, geom, image, verified, validated, created_at)
+    VALUES (p_rid_user, new_id_aoi, p_descr, p_lat, p_long, new_geom, p_image, verified, false, now())
+    RETURNING aa.verified INTO verified;
+
+    RETURN verified;
+END;
+
+#+end_example

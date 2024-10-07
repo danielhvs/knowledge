@@ -1,0 +1,14 @@
+#+begin_src bash
+aws configure
+#+end_src
+
+Then, enter your access key, secret access key, default region name, and output format when prompted.
+Now, you can use the following command to list objects in your S3 bucket or directory:
+
+#+begin_src bash
+aws s3 ls s3://$S3_BUCKET/$S3_DIR/ --region $S3_REGION
+#+end_src
+
+#+begin_src bash
+aws s3 cp s3://$S3_BUCKET/$S3_DIR/ local_destination_folder --region $S3_REGION --recursive
+#+end_src
