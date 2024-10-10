@@ -21,3 +21,10 @@ netstat -anpe | grep "8010" | grep "LISTEN" | awk '{print $NF}' | cut -d'/' -f1 
 https://github.com/aircrack-ng/rtl8188eus
 
 make clean && make && sudo make install
+
+
+* Telnet
+
+telnet <dns> <port>
+
+telnet google.com 80
