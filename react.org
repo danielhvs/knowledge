@@ -26,8 +26,13 @@ const selectedValue = useMemo(
     () => items.find(...),
     [items]);
 
-can wrap a compoent! (in which case it's going to re-render only if the compoent's props change)
+`memo` (not `useMemo`) can wrap a component! (in which case it's going to re-render only if the component's props change)
+
+export bla return memo(Component);
 
 * useCallback
 
 https://www.youtube.com/watch?v=MxIPQZ64x0I&t=55s
+
+useCallback will "freeze" a function so that it behaves as "data": same content, same function.
+this solves the problem when a component is wrapped in `memo`
