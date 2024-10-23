@@ -1,6 +1,7 @@
 * General
 
-a function is always different from itself!
+IN REACT: a function is always different from itself!
+(that's because it's going to be "redefined", i.e, the code will re-run thus creating another "pointer")
 
 * useEffect
 
