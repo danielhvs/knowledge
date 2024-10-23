@@ -1,3 +1,8 @@
+* General
+
+a function is always different from itself!
+
+
 * useEffect
 
 Always run once at `component-mount`
@@ -8,3 +13,8 @@ args:
 
 returns:
 return (optionally) a function to be run in component `will-unmount`
+
+
+* useCallback
+
+https://www.youtube.com/watch?v=MxIPQZ64x0I&t=55s
