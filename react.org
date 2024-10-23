@@ -2,7 +2,6 @@
 
 a function is always different from itself!
 
-
 * useEffect
 
 Always run once at `component-mount`
@@ -14,6 +13,17 @@ args:
 returns:
 return (optionally) a function to be run in component `will-unmount`
 
+* useMemo
+
+https://www.youtube.com/watch?v=vpE9I_eqHdM&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=3
+
+memoizes a value
+
+has a deps array as well so it can re-run to update the value
+
+const selectedValue = useMemo(
+    () => items.find(...),
+    [items]);
 
 * useCallback
 
