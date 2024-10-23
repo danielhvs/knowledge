@@ -1,0 +1,10 @@
+* useEffect
+
+Always run once at `component-mount`
+
+args:
+1. function
+2. dependency args (vector)
+
+returns:
+return (optionally) a function to be run in component `will-unmount`
