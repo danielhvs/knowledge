@@ -25,6 +25,8 @@ const selectedValue = useMemo(
     () => items.find(...),
     [items]);
 
+can wrap a compoent! (in which case it's going to re-render only if the compoent's props change)
+
 * useCallback
 
 https://www.youtube.com/watch?v=MxIPQZ64x0I&t=55s
