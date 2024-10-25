@@ -1,3 +1,9 @@
+* React Tools
+
+build sets env vars... NODE_ENV to production or development
+
+also maybe sets PUBLIC_URL env var!
+
 * General
 
 IN REACT: a function is always different from itself!
