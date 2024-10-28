@@ -51,3 +51,5 @@ invalidate!
 [query-key a string, query-arg1, query-arg2 ...]
 
 invalidate! on success of a `mutation`
+
+!!!! use staleTime: infinity to avoiding fetching in the background
