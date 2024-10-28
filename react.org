@@ -42,3 +42,12 @@ https://www.youtube.com/watch?v=MxIPQZ64x0I&t=55s
 
 useCallback will "freeze" a function so that it behaves as "data": same content, same function.
 this solves the problem when a component is wrapped in `memo`
+
+* useQuery
+
+https://www.youtube.com/watch?v=8K1N3fE-cDs
+
+invalidate!
+[query-key a string, query-arg1, query-arg2 ...]
+
+invalidate! on success of a `mutation`
