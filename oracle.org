@@ -1,4 +1,50 @@
-* some metadata
+* all TABLES
+#+begin_src sql
+select distinct(table_name)
+from
+  all_tab_columns
+where owner='EGF'
+#+end_src
+
+#+RESULTS:
+#+begin_example
+table_name
+--------------------------------
+RUBRICAS_PAB
+AGRUPAMENTOS_PAB
+BATCH_JOB_INSTANCE
+RUBRICAS_CONCESSAO
+CREDITOS_CALAMIDADE
+RUBRICAS_CALAMIDADE
+BATCH_STEP_EXECUTION_CONTEXT
+CREDITOS_PAB
+AGRUPAMENTOS_CONCESSAO
+AGRUPAMENTOS_RUBRICAS_CALAMIDADE
+HIST_CREDITOS_MACICA
+BATCH_JOB_EXECUTION
+PARAMETROS
+HIST_RUBRICAS_CALAMIDADE
+HIST_RUBRICAS_MACICA
+AGRUPAMENTOS_RUBRICAS_CONCESSAO
+HIST_CREDITOS_CALAMIDADE
+RUBRICAS_MACICA
+BATCH_JOB_EXECUTION_CONTEXT
+CONTROLE_PROCESSAMENTOS
+AGRUPAMENTOS_CALAMIDADE
+CREDITOS_MACICA
+CREDITOS_ERROS
+EXECUCOES_AGRUPAMENTOS
+HIST_CREDITOS_CONCESSAO
+HIST_RUBRICAS_PAB
+AGRUPAMENTOS_RUBRICAS_PAB
+BATCH_JOB_EXECUTION_PARAMS
+BATCH_STEP_EXECUTION
+CREDITOS_CONCESSAO
+HIST_CREDITOS_PAB
+HIST_RUBRICAS_CONCESSAO
+#+end_example
+
+* some metadata from a TABLE
 #+begin_src sql
 select
   column_name,
@@ -11,10 +57,18 @@ select
 from
   all_tab_columns
 where
-  table_name = 'the-column-name'
+  table_name = 'PARAMETROS'
 #+end_src
 
-* all metadata
+#+RESULTS:
+: column_name            | table_name | nullable | data_type | data_length | data_precision | data_scale
+: -----------------------+------------+----------+-----------+-------------+----------------+-----------
+: TE_CHAVE_PARAMETRO     | PARAMETROS | N        | VARCHAR2  | 100         |                |
+: TE_DESCRICAO_PARAMETRO | PARAMETROS | N        | VARCHAR2  | 200         |                |
+: DT_INCLUSAO_PARAMETRO  | PARAMETROS | N        | DATE      | 7           |                |
+: TE_DADO_PARAMETRO      | PARAMETROS | N        | VARCHAR2  | 1500        |                |
+
+* all metadata from a TABLE
 #+begin_src sql
 select
   *
@@ -53,9 +107,9 @@ SELECT s.sid, s.serial#, s.status, s.osuser, s.machine, s.program FROM v$session
 #+end_src
 
 #+RESULTS:
-: sid  | serial# | status   | osuser           | machine       | program         
+: sid  | serial# | status   | osuser           | machine       | program
 : -----+---------+----------+------------------+---------------+-----------------
 : 31   | 10213   | INACTIVE | danielhabib      | DNBSCDC289646 | JDBC Thin Client
-: 1159 | 2405    | INACTIVE | henriqueda.silva | DNBSCDC289770 | SQL Developer   
+: 1159 | 2405    | INACTIVE | henriqueda.silva | DNBSCDC289770 | SQL Developer
 : 1180 | 40863   | ACTIVE   | danielhabib      | DNBSCDC289646 | JDBC Thin Client
-: 4011 | 15641   | INACTIVE | joao.katayama    | DNBSCDC289666 | SQL Developer   
+: 4011 | 15641   | INACTIVE | joao.katayama    | DNBSCDC289666 | SQL Developer
