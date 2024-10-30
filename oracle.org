@@ -1,3 +1,14 @@
+* Constraints
+
+#+begin_src sql
+
+SELECT  constraint_name, constraint_type, search_condition, search_condition_vc
+FROM USER_CONSTRAINTS
+WHERE TABLE_NAME = '???';
+and owner='???'
+
+#+end_src
+
 * all TABLES
 #+begin_src sql
 select distinct(table_name)
