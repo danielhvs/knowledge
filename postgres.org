@@ -1,3 +1,5 @@
+* Install from source
+https://www.tecmint.com/install-postgresql-from-source-code-in-linux/
 * Links
 # Links
 1. https://www.postgresql.org/docs/9.5/functions-json.html
@@ -149,10 +151,7 @@ psql
 
 * All table names
 #+begin_src sql
-SELECT table_name
-FROM information_schema.tables
-WHERE table_schema = 'public'
-ORDER BY table_name;
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;
 #+end_src
 
 
