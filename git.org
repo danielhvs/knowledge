@@ -15,3 +15,8 @@ or
 #+begin_src
 git checkout --ours /path/to/conflicted/file
 #+end_src
+
+
+* check after fixing the conflict (rebasing...)
+script to compare after fixing the merge conflict:
+git diff (original merge commit) current merge commit
