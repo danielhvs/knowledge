@@ -3,3 +3,15 @@ git rev-list 3b8173b2d10b4e664d50b911681ebdd4a8a10629..HEAD | xargs -n1 -I{} sh 
 
 * root commit
 git log --max-parents=0
+
+* autosolve git conflicts
+
+ While it's not recommended for all cases due to the importance of understanding changes in your code, you can automatically select one version of the conflicted files using the following command in Git:
+
+#+begin_src
+git checkout --theirs /path/to/conflicted/file
+#+end_src
+or
+#+begin_src
+git checkout --ours /path/to/conflicted/file
+#+end_src
