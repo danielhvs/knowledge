@@ -1,0 +1,5 @@
+* script arbitraria para cada commit
+git rev-list 3b8173b2d10b4e664d50b911681ebdd4a8a10629..HEAD | xargs -n1 -I{} sh -c 'git show {} | grep task -i -q ; echo {}: $?' | grep ': 1$'
+
+* root commit
+git log --max-parents=0
