@@ -1,0 +1,26 @@
+* videos
+https://www.youtube.com/watch?v=2otjrTzRfVk
+https://www.youtube.com/watch?v=bx_LGilOuE4
+
+* notes
+
+put in bashrc:
+export PATH=$PATH:/home/danielhabib/.cargo/bin
+source <(jj util completion bash)
+
+source <(jj util completion bash)
+jj config set --user user.name "Daniel Habib"
+jj config set --user user.email "danielhvs70@gmail.com"
+
+Setting the revset alias "trunk()" to "desenvolvimento@origin"
+Hint: The following remote bookmarks aren't associated with the existing local bookmarks:
+desenvolvimento@origin
+incidente-vale-esse@origin
+Hint: Run `jj bookmark track desenvolvimento@origin incidente-vale-esse@origin` to keep local bookmarks updated on future pulls.
+
+jj bookmark track incidente-tmp@origin
+
+Show  much logs and then look for the commits.
+Then lookg for the given "working" tag to use in describe command
+jj log -r incidente-tmp..3b8173b2d10b4e664d50b911681ebdd4a8a10629
+jj log -r 3b8173b2d10b4e664d50b911681ebdd4a8a10629..incidente-tmp
