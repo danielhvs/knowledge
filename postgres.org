@@ -4,50 +4,36 @@ https://www.tecmint.com/install-postgresql-from-source-code-in-linux/
 # Links
 1. https://www.postgresql.org/docs/9.5/functions-json.html
 1. https://www.cybertec-postgresql.com/en/recursive-queries-postgresql/
-
 * General info about the tables
-
 #+begin_src sql :results output
 select column_name, is_nullable, data_type
   FROM information_schema.columns
  WHERE table_schema = 'terraontrack'
 #+end_src
-
 * List databases
 \l
-
 * Connect to a database
 \c db_name
-
 * List schemas
 \dt
-
 * Describe tables (in a schema):
 \dt schema_name.*
-
 * Describe a table (in a schema):
 \d schema_name.table_name
-
 * Connection
 \conninfo
-
 * User
-
 #+begin_src sql :results output
 SELECT current_user;
 #+end_src
-
 * Views
 #+begin_src sql :results output
 select viewname
 from pg_catalog.pg_views
 where viewname like '%bla%';
 #+end_src
-
 * indexes
-
 #+begin_src sql :results output
-
 SELECT
     tablename,
     indexname,
@@ -60,12 +46,10 @@ ORDER BY
     tablename,
     indexname;
 #+end_src
-
 * see connections
 #+begin_src sql :results output
 SELECT * FROM pg_stat_activity;
 #+end_src
-
 * kill connections
 #+begin_src sql :results output
 SELECT
@@ -75,21 +59,16 @@ FROM
 WHERE
     pg_stat_activity.datname = 'databasename'
     AND pid <> pg_backend_pid();
-
 #+end_src
-
 * select as json
 #+begin_src sql :results output
 SELECT jsonb_pretty(to_jsonb(json_agg(table_name))) FROM table_name;
 select row_to_json(row) from <schema>.<tablename> row
 #+end_src
-
 * types
-
 #+begin_src sql :results output
 SELECT pg_typeof(your_variable);
 #+end_src
-
 * terminate idle connections
 #+begin_src sql :results output
 SELECT
@@ -100,7 +79,6 @@ WHERE
   pg_stat_activity.datname = 'target_database'
   AND pid <> pg_backend_pid ();
 #+end_src
-
 * select connections
 #+begin_src sql :results output
 SELECT
@@ -114,7 +92,6 @@ FROM
 WHERE
   pg_stat_activity.state = 'idle';
 #+end_src
-
 * Procedure names and content:
 #+begin_src sql :results output
 SELECT routine_schema As schema_name,
@@ -123,7 +100,6 @@ routine_definition
 FROM information_schema.routines
 WHERE routine_type = 'PROCEDURE';
 #+end_src
-
 * use psql as postgres user in os:
 ```bash
 sudo -u postgres psql
@@ -132,40 +108,32 @@ Enter new password:
 Enter it again:
 postgres=# \q
 ```
-
 * By default, PostgreSQL sets up a role/user named "postgres" that you can use to access the database. To switch to this user, run:
 #+begin_src bash
 sudo -i -u postgres
 #+end_src
-
 * Now you can access the PostgreSQL shell:
-
 #+begin_src bash
 psql
 #+end_src
-
 * To exit the PostgreSQL shell, type:
 #+begin_src bash
 \q
 #+end_src
-
 * All table names
 #+begin_src sql
 SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;
 #+end_src
-
 * Login as a specific user:
 psql -U gsremt
 * functions source code
 #+begin_src sql
 select prosrc from pg_proc where proname= 'insert_app_alert'
 #+end_src
-
 #+RESULTS:
 #+begin_example
 prosrc
 ------------------------------------------------------------------------------------------------------
-
 DECLARE
     new_geom        geometry;
     new_id_aoi      int;
@@ -178,7 +146,6 @@ BEGIN
     INTO new_id_aoi
     FROM areas_of_interest
     WHERE st_intersects(new_geom, geom);
-
     -- role aoi-admin or user
     SELECT rid_user
     INTO allowed_id_user
@@ -186,36 +153,28 @@ BEGIN
     WHERE rid_aoi = new_id_aoi
       AND rid_user = p_rid_user
       AND rid_aoi_role IN (1, 2);
-
     -- super-admin
     SELECT id
     INTO super_admin_id
     FROM users
     WHERE super_admin = true
       AND id = p_rid_user;
-
     IF new_id_aoi IS NOT NULL AND (allowed_id_user IS NOT NULL OR super_admin_id IS NOT NULL) THEN
         verified := true;
     ELSE
         verified := false;
     END IF;
-
     INSERT INTO app_alerts AS aa
     (rid_user, id_aoi, descr, lat, long, geom, image, verified, validated, created_at)
     VALUES (p_rid_user, new_id_aoi, p_descr, p_lat, p_long, new_geom, p_image, verified, false, now())
     RETURNING aa.verified INTO verified;
-
     RETURN verified;
 END;
-
 #+end_example
-
 * hd size it occupies
-
 #+begin_src sql
 SELECT pg_size_pretty( pg_database_size('dbname') );
 #+end_src
-
 =>
  pg_size_pretty
 ----------------
