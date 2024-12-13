@@ -154,7 +154,8 @@ psql
 SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;
 #+end_src
 
-
+* Login as a specific user:
+psql -U gsremt
 * functions source code
 #+begin_src sql
 select prosrc from pg_proc where proname= 'insert_app_alert'
