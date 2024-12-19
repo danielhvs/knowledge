@@ -1,10 +1,26 @@
 * issues with gpu amd
 
+TLDR:
+mkdir -p /etc/X11/xorg.conf.d
+vim 20-amdgpu.conf
+contents:
+
+```bash
+Section "Device"
+        Identifier      "AMD Graphics"
+        Driver          "amdgpu"
+        Option          "TearFree" "true"
+EndSection
+```
+
+All
+^ TLDR:
+
 link: https://davejansen.com/quick-how-to-fix-screen-tearing-in-ubuntu-with-amd-gpus/
 
 main fix:
 Let's fix screen tearing
-Open up a terminal window and cd to /etc/X11. You'll either need to sudo each of the following commands, or start a sudo session using sudo -s as the files and folders we'll be working with are owned by root.
+Open up a terminal window and cd to /etc/X11 . You'll either need to sudo each of the following commands, or start a sudo session using sudo -s as the files and folders we'll be working with are owned by root.
 
 We'll need to create a new sub-folder here if one doesn't already exist called xorg.conf.d, so do that now if there indeed is no such folder yet. Then, cd into it and, using your favorite text editor, create a new file called 20-amdgpu.conf with the following contents:
 
