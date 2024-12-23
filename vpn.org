@@ -1,10 +1,26 @@
 https://www.vivaolinux.com.br/artigo/Acesso-a-VPN-com-etoken-USB-1/
 
-Maybe this:
+* Driver
 https://safesign.gdamericadosul.com.br/download
+
+tentei instalar o normal (para 22.04) e dava segfault ao chamar
+p11tool --list-tokens
+
+aí por isso dava erro no openconnect (segfault)
+
+resolucao:
+instalei a versao para Ubuntu-20 usando dpkg -i
+/home/danielhabib/Downloads/SafeSign_IC_Standard_Linux_3.7.0.0_AET.000_ub2004_x86_64.rar
+
+para funcionar tive que instalar a lib dependencia: libssl1
+/home/danielhabib/Downloads/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
+
+GD tem que instalar a libsslv1 da URL http://security.ubuntu.com/ubuntu/pool/main/o/openssl/libssl1.1_1.1.1f-1ubuntu2_amd64.deb
 
 * p11tool
 
 vide man p11tool
 /etc/gnutls/pkcs11.conf :
 load=/usr/lib/x86_64-linux-gnu/opensc-pkcs11.so
+
+sudo apt -y install libjbig0 libtiff5 fontconfig-config libfontconfig1 libwxbase3.0-0v5 libpcsclite1 libccid pcscd opensc unzip libnss3-tools unrar
