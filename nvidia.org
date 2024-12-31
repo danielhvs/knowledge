@@ -1,0 +1,4 @@
+It's different between i3 and gnome-shell!
+
+Try:
+/opt/softplan-websigner/websigner
