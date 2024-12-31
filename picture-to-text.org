@@ -1,0 +1,11 @@
+* https://superuser.com/questions/46730/convert-image-to-text
+You need to install "tesseract-ocr" on your Linux machine first.
+
+sudo apt-get install tesseract-ocr
+
+You can do it manually from the command line:
+
+tesseract -l eng input.jpg output
+
+^ this outputs an output.txt file
+after converting, review!
