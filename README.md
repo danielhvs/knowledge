@@ -18,6 +18,7 @@
 1. [mongo.md](mongo.md)
 1. [network.org](network.org)
 1. [oracle.org](oracle.org)
+1. [picture-to-text](picture-to-text.org)
 1. [postgres.org](postgres.org)
 1. [prometheus.md](prometheus.md)
 1. [proxy.md](proxy.md)
