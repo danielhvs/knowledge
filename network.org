@@ -15,16 +15,30 @@ netstat -anpe | grep "8010" | grep "LISTEN" | awk '{print $NF}' | cut -d'/' -f1
 netstat -anpe | grep "8010" | grep "LISTEN" | awk '{print $NF}' | cut -d'/' -f1 | xargs kill
 #+end_src
 
-
 * Wireless Adapter
 
 https://github.com/aircrack-ng/rtl8188eus
 
 make clean && make && sudo make install
 
-
 * Telnet
 
 telnet <dns> <port>
 
 telnet google.com 80
+
+Local issues with vpn dtp
+
+File:
+sudo vim /etc/resolv.conf
+
+options edns0 trust-ad
+nameserver 10.70.124.20
+nameserver 10.0.220.150
+search prevnet dataprev.gov.br
+
+Fix:
+add:
+
+nameserver 8.8.8.8
+nameserver 8.8.4.4
