@@ -2,3 +2,5 @@ It's different between i3 and gnome-shell!
 
 Try:
 /opt/softplan-websigner/websigner
+
+Actually the difference is between allacrity and gnome-shell
