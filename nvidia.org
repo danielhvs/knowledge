@@ -4,3 +4,11 @@ Try:
 /opt/softplan-websigner/websigner
 
 Actually the difference is between allacrity and gnome-shell
+
+* X Server Error Msg:
+  You appear to be running an X server.  Installing the NVIDIA driver while X is running is not recommended, as doing so may prevent the installer
+  from detecting some potential installation problems, and it may not be possible to start new graphics applications after a new driver is installed.
+  If you choose to continue installation, it is highly recommended that you reboot your computer after installation to use the newly installed
+  driver.
+
+                                        Continue installation                             Abort installation
