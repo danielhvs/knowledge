@@ -23,3 +23,5 @@ To make the thing work in allacrity I'll try:
 sudo apt-get install g++ pkg-config libx11-dev libasound2-dev libudev-dev libxkbcommon-x11-0
 
 Didn't work
+
+* https://casadopinduvoz.wordpress.com/2018/06/14/certificado-digital-peticionamento-eletronico-linux-atual-64-bits/
