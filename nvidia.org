@@ -12,3 +12,12 @@ Actually the difference is between allacrity and gnome-shell
   driver.
 
                                         Continue installation                             Abort installation
+
+* Tried to install via additional drivers in gnome-shell
+
+Looks like the installation was fine though there is an error now appearing in the console in init...
+
+* Allacrity
+
+To make the thing work in allacrity I'll try:
+sudo apt-get install g++ pkg-config libx11-dev libasound2-dev libudev-dev libxkbcommon-x11-0
