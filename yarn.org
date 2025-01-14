@@ -1,0 +1,11 @@
+* Config
+** List
+
+#+begin_src bash
+yarn config list
+#+end_src
+
+** Set values
+#+begin_src bash
+yarn config set strict-ssl false
+#+end_src
