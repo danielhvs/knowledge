@@ -1,0 +1,13 @@
+* WSL localhost mapping issue
+
+https://github.com/microsoft/WSL/issues/6426
+
+in the file /mnt/c/Windows/System32/drivers/etc/hosts
+put also ::1 and the thing
+
+for example:
+
+```bash
+127.0.0.1 local.bla.org
+::1       local.bla.org
+```
