@@ -29,6 +29,8 @@ telnet google.com 80
 
 Local issues with vpn dtp
 
+* VPN
+
 File:
 sudo vim /etc/resolv.conf
 
