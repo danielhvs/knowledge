@@ -11,3 +11,12 @@ for example:
 127.0.0.1 local.bla.org
 ::1       local.bla.org
 ```
+
+* WSL2 problem with graphics (emacs)
+
+sudo apt install glib
+
+https://github.com/microsoft/WSL/discussions/10677
+
+add to .bashrc:
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
