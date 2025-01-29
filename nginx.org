@@ -1,0 +1,6 @@
+* Files to configure
+/etc/nginx/nginx.conf
+/etc/nginx/sites-enabled/my-site.conf
+/etc/ssl/private/bla.key
+/etc/ssl/lol.crt
+ps -ax | grep nginx
