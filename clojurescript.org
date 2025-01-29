@@ -1,0 +1,8 @@
+* .dir-locals.el file
+
+((clojurescript-mode . ((cider-clojure-cli-global-options . "-A:figwheel-lib"))))
+
+This allows to select the deps.edn alias to run.
+Running the alias below will set cider up correctly to call `cider-jack-in-cljs`:
+
+:figwheel-lib {:extra-deps {com.bhauman/figwheel-main {:mvn/version "0.2.18"}}}
