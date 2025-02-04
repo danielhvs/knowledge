@@ -1,3 +1,5 @@
+* Links
+- [X] https://www.youtube.com/watch?v=TlHvYWVUZyc
 * List pods show
 #+begin_src bash
 kubectl get pods
