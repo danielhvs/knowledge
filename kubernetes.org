@@ -1,12 +1,16 @@
 * List pods show
-
 #+begin_src bash
 kubectl get pods
 #+end_src
-
-outputs:
-
 coder@cs:~$ kubectl get pods
 NAME                  READY   STATUS    RESTARTS   AGE
 cs-58df6d64bb-bs7jv   1/1     Running   0          16h
+coder@cs:~$
+* Deploy
+#+begin_src bash
+kubectl get deploy
+#+end_src
+coder@cs:~$ kubectl get deploy
+NAME   READY   UP-TO-DATE   AVAILABLE   AGE
+cs     1/1     1            1           16h
 coder@cs:~$

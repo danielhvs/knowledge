@@ -17,6 +17,7 @@
 1. [java.md](java.md)
 1. [jj](jj.org)
 1. [keyboard.md](keyboard.md)
+1. [kubernetes.org](kubernetes.org)
 1. [mongo.md](mongo.md)
 1. [network.org](network.org)
 1. [nginx.org](nginx.org)
