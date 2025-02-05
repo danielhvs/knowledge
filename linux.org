@@ -1,2 +1,5 @@
 * sudo
 -E flag preserves Environment args! So `sudo -E bla bla` will use $http_proxy etc for example.
+
+* rm
+removing with the -f (force) flag does not raises an error if a file does not exist!
