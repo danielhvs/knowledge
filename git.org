@@ -13,6 +13,8 @@ git checkout --ours /path/to/conflicted/file
 #+end_src
 * install latest version
 https://askubuntu.com/questions/568591/how-do-i-install-the-latest-version-of-git-with-apt
+A-1. Uninstall the default version provided by Ubuntu's package manager and configuration by using:
+sudo apt remove --purge --auto-remove -y git
 B. Using PPA Repositories (recommended for normal users)
 There is a PPA available from Ubuntu Git Maintainers team that we can use to easily install the latest stable Git version. So we can install it easily following these steps:
 B-1. Uninstall the default version provided by Ubuntu's package manager as in A-1.
