@@ -1,13 +1,9 @@
 * script arbitraria para cada commit
 git rev-list 3b8173b2d10b4e664d50b911681ebdd4a8a10629..HEAD | xargs -n1 -I{} sh -c 'git show {} | grep task -i -q ; echo {}: $?' | grep ': 1$'
-
 * root commit
 git log --max-parents=0
-
 * autosolve git conflicts
-
  While it's not recommended for all cases due to the importance of understanding changes in your code, you can automatically select one version of the conflicted files using the following command in Git:
-
 #+begin_src
 git checkout --theirs /path/to/conflicted/file
 #+end_src
@@ -15,8 +11,17 @@ or
 #+begin_src
 git checkout --ours /path/to/conflicted/file
 #+end_src
-
-
+* install latest version
+https://askubuntu.com/questions/568591/how-do-i-install-the-latest-version-of-git-with-apt
+B. Using PPA Repositories (recommended for normal users)
+There is a PPA available from Ubuntu Git Maintainers team that we can use to easily install the latest stable Git version. So we can install it easily following these steps:
+B-1. Uninstall the default version provided by Ubuntu's package manager as in A-1.
+B-2. Add PPA repository to your sources list.
+sudo add-apt-repository ppa:git-core/ppa
+B-3. Finally we can update and install the git package.
+sudo apt update
+sudo apt install git
+B-4. Test your new git version as in A-4.
 * check after fixing the conflict (rebasing...)
 script to compare after fixing the merge conflict:
 git diff (original merge commit) current merge commit
