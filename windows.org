@@ -31,3 +31,18 @@ Nope. Same issue
 * Now another attempt:
 
 https://github.com/microsoft/WSL/issues/9752#issuecomment-1635489940
+
+actually this I have:
+
+https://github.com/microsoft/WSL/issues/9752#issuecomment-2099216086
+
+
+I have these logs in /mnt/wslg/weston.log which correspond to the blinks:
+```bash
+...
+[16:06:57.945] Client: ClientGetAppidReq: WindowId:0x8c is not found.
+[16:07:04.425] Client: ClientGetAppidReq: WindowId:0x8e is not found.
+[16:07:07.739] Client: ClientGetAppidReq: WindowId:0x8f is not found.
+[16:07:11.056] Client: ClientGetAppidReq: WindowId:0x90 is not found.
+...
+```
