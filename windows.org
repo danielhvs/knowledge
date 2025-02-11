@@ -20,3 +20,14 @@ https://github.com/microsoft/WSL/discussions/10677
 
 add to .bashrc:
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu/
+
+* Seems to actually be some sort of issue with the terminals? So trying wlstty (they say version 3.0.5 or less does not come with the issue)
+
+So I've tested 3.7.7 and still flashes
+Now trying 3.0.2
+
+Nope. Same issue
+
+* Now another attempt:
+
+https://github.com/microsoft/WSL/issues/9752#issuecomment-1635489940
