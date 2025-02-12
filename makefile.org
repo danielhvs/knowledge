@@ -1,0 +1,26 @@
+PROJECT := cljweb-pyregence
+CLJ := /usr/local/bin/clojure
+SYSD := /usr/bin/systemctl --user
+
+.PHONY: deploy
+
+deploy:
+        ${SYSD} stop ${PROJECT}
+        git pull
+        rm -rf target
+        ${CLJ} -M:compile-cljs
+        # ${CLJ} -M:build-db migrate
+        ${CLJ} -M:build-db functions
+        ${SYSD} start ${PROJECT}
+
+status:
+        ${SYSD} status ${PROJECT}
+
+start:
+        ${SYSD} start ${PROJECT}
+
+stop:
+        ${SYSD} stop ${PROJECT}
+
+restart:
+        ${SYSD} restart ${PROJECT}
