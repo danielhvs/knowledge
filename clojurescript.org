@@ -7,7 +7,6 @@ Running the alias below will set cider up correctly to call `cider-jack-in-cljs`
 
 :figwheel-lib {:extra-deps {com.bhauman/figwheel-main {:mvn/version "0.2.18"}}}
 
-
 * js hacks
 
 defn- hack-it! []
@@ -24,5 +23,4 @@ defn- hack-it! []
 ;; }
 
 ;; document.querySelectorAll('input[type=text]')
-
 
