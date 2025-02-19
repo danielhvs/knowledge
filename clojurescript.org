@@ -6,3 +6,23 @@ This allows to select the deps.edn alias to run.
 Running the alias below will set cider up correctly to call `cider-jack-in-cljs`:
 
 :figwheel-lib {:extra-deps {com.bhauman/figwheel-main {:mvn/version "0.2.18"}}}
+
+
+* js hacks
+
+defn- hack-it! []
+  (let [summary (.querySelector js/document ".vega-embed summary")]
+    (set! (.-transform (.-style summary)) "translate(-20%, 20%)")
+    #_(.-style summary)
+    #_(.setAttribute summary "style" "transform: translate(-20%, 20%)")))
+
+;; var elements = document.getElementsByClassName('hidden-class');
+;; for (var i in elements) {
+;;   if (elements.hasOwnProperty(i)) {
+;;     elements[i].className = 'show-class';
+;;   }
+;; }
+
+;; document.querySelectorAll('input[type=text]')
+
+
