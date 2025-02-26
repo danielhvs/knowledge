@@ -6,7 +6,7 @@ build `build-classpath`
 mvn dependency:build-classpath -DincludeTypes=jar -Dmdep.outputFile=.cp.txt
 ```
 
-run it 
+run it
 
 ```
 jshell --class-path `cat .cp.txt`:target/classes
@@ -16,3 +16,6 @@ jshell --class-path `cat .cp.txt`:target/classes
 
 install without oracle:
 https://adoptium.net/temurin/archive/?version=8
+
+hibernate
+https://cursojavanow.com.br/introducao_ao_hibernate/
