@@ -17,44 +17,6 @@ from
 where owner='EGF'
 #+end_src
 
-#+RESULTS:
-#+begin_example
-table_name
---------------------------------
-RUBRICAS_PAB
-AGRUPAMENTOS_PAB
-BATCH_JOB_INSTANCE
-RUBRICAS_CONCESSAO
-CREDITOS_CALAMIDADE
-RUBRICAS_CALAMIDADE
-BATCH_STEP_EXECUTION_CONTEXT
-CREDITOS_PAB
-AGRUPAMENTOS_CONCESSAO
-AGRUPAMENTOS_RUBRICAS_CALAMIDADE
-HIST_CREDITOS_MACICA
-BATCH_JOB_EXECUTION
-PARAMETROS
-HIST_RUBRICAS_CALAMIDADE
-HIST_RUBRICAS_MACICA
-AGRUPAMENTOS_RUBRICAS_CONCESSAO
-HIST_CREDITOS_CALAMIDADE
-RUBRICAS_MACICA
-BATCH_JOB_EXECUTION_CONTEXT
-CONTROLE_PROCESSAMENTOS
-AGRUPAMENTOS_CALAMIDADE
-CREDITOS_MACICA
-CREDITOS_ERROS
-EXECUCOES_AGRUPAMENTOS
-HIST_CREDITOS_CONCESSAO
-HIST_RUBRICAS_PAB
-AGRUPAMENTOS_RUBRICAS_PAB
-BATCH_JOB_EXECUTION_PARAMS
-BATCH_STEP_EXECUTION
-CREDITOS_CONCESSAO
-HIST_CREDITOS_PAB
-HIST_RUBRICAS_CONCESSAO
-#+end_example
-
 * some metadata from a TABLE
 #+begin_src sql
 select
@@ -70,14 +32,6 @@ from
 where
   table_name = 'PARAMETROS'
 #+end_src
-
-#+RESULTS:
-: column_name            | table_name | nullable | data_type | data_length | data_precision | data_scale
-: -----------------------+------------+----------+-----------+-------------+----------------+-----------
-: TE_CHAVE_PARAMETRO     | PARAMETROS | N        | VARCHAR2  | 100         |                |
-: TE_DESCRICAO_PARAMETRO | PARAMETROS | N        | VARCHAR2  | 200         |                |
-: DT_INCLUSAO_PARAMETRO  | PARAMETROS | N        | DATE      | 7           |                |
-: TE_DADO_PARAMETRO      | PARAMETROS | N        | VARCHAR2  | 1500        |                |
 
 * all metadata from a TABLE
 #+begin_src sql
@@ -117,10 +71,174 @@ end
 SELECT s.sid, s.serial#, s.status, s.osuser, s.machine, s.program FROM v$session s where osuser not in('oracle', 'eco')
 #+end_src
 
+
+* batch
+#+begin_src sql
+select distinct(table_name)
+from all_tab_columns
+where table_name like '%BATCH5%'
+#+end_src
+How to remove everything from a spring batch by job_execution_id?
+I want a sql query.
+This is a oracle db.
+I want to pass a given job_execution_id.
+
+ Here is a SQL query that should delete all records related to a given =job_execution_id= in a Spring Batch tables scheme in an Oracle database:
+#+begin_src sql
+DELETE FROM BATCH5_JOB_EXECUTION_PARAMS;
+DELETE FROM BATCH5_STEP_EXECUTION_CONTEXT;
+DELETE FROM BATCH5_STEP_EXECUTION;
+DELETE FROM BATCH5_JOB_EXECUTION_CONTEXT;
+DELETE FROM BATCH5_JOB_EXECUTION;
+DELETE FROM BATCH5_JOB_INSTANCE;
+COMMIT;
+#+end_src
+
+Replace =:your_given_job_execution_id= with the desired =job_execution_id= value before executing the script.
+
+Make sure you have the necessary permissions to perform these actions on the database, and consider using a transaction to ensure data consistency if required.
+
+#+begin_src sql
+delete from BATCH5_JOB_EXECUTION where job_execution_id = 361
+#+end_src
+
+#+begin_src sql
+select * from BATCH5_STEP_EXECUTION_CONTEXT where step_execution_id = 416;
+delete from BATCH5_STEP_EXECUTION_CONTEXT where step_execution_id = 416;
+select * from BATCH5_STEP_EXECUTION_CONTEXT where step_execution_id = 416;
+select * from BATCH_STEP_EXECUTION where step_execution_id = 416;
+delete from BATCH_STEP_EXECUTION where step_execution_id = 416;
+select * from BATCH_STEP_EXECUTION where step_execution_id = 416;
+#+end_src
+
+#+begin_src sql
+select * from BATCH5_JOB_EXECUTION_CONTEXT where job_execution_id = 361;
+delete from BATCH5_JOB_EXECUTION_CONTEXT where job_execution_id = 361;
+select * from BATCH5_JOB_EXECUTION_CONTEXT where job_execution_id = 361;
+#+end_src
+
+BATCH5_JOB_EXECUTION_CONTEXT
+: job_execution_id
+: short_context
+: serialized_context
+#+begin_src sql
+select * from BATCH5_JOB_EXECUTION_CONTEXT where rownum=1
+#+end_src
+BATCH5_JOB_EXECUTION
+job_execution_id
+version
+job_instance_id
+create_time
+start_time
+end_time
+status
+exit_code
+exit_message
+last_updated
+
+#+begin_src sql
+select * from BATCH5_JOB_EXECUTION where rownum=1
+#+end_src
+
+#+begin_src sql
+delete from BATCH5_JOB_EXECUTION where job_execution_id = 361;
+#+end_src
+
+: BATCH5_JOB_EXECUTION_PARAMS
+: job_execution_id
+: parameter_name
+: parameter_type
+: parameter_valu
+: identifying
+
+#+begin_src sql
+select * from BATCH5_JOB_EXECUTION_PARAMS where rownum=1
+#+end_src
+
+BATCH5_STEP_EXECUTION
+step_execution_id
+version
+step_name
+job_execution_id
+create_time
+start_time
+end_time
+status
+commit_count
+read_count
+filter_count
+write_count
+read_skip_count
+write_skip_count
+process_skip_count
+rollback_count
+exit_code
+exit_message
+last_updated
+#+begin_src sql
+select * from BATCH5_STEP_EXECUTION where rownum=1
+#+end_src
+
+#+begin_src sql
+delete from BATCH5_STEP_EXECUTION_CONTEXT where job_execution_id = 361;
+delete from BATCH5_STEP_EXECUTION where job_execution_id = 361;
+#+end_src
+
+
+BATCH5_STEP_EXECUTION_CONTEXT
+: step_execution_id
+: short_context
+: serialized_context
+#+begin_src sql
+select * from BATCH5_STEP_EXECUTION_CONTEXT where rownum=1
+#+end_src
+#+begin_src sql
+delete from BATCH5_JOB_EXECUTION_PARAMS where job_execution_id = 361;
+#+end_src
+
+BATCH5_JOB_INSTANCE
+: job_instance_id | version | job_name | job_key
+#+begin_src sql
+select * from BATCH5_JOB_INSTANCE
+order by job_instance_id desc
+FETCH FIRST 5 ROWS ONLY
+#+end_src
+
+#+begin_src sql
+delete from BATCH5_JOB_INSTANCE where job_instance_id = 284;
+#+end_src
+
+select * from BATCH5_JOB_EXECUTION_CONTEXT where job_execution_id = 361;
+
 #+RESULTS:
-: sid  | serial# | status   | osuser           | machine       | program
-: -----+---------+----------+------------------+---------------+-----------------
-: 31   | 10213   | INACTIVE | danielhabib      | DNBSCDC289646 | JDBC Thin Client
-: 1159 | 2405    | INACTIVE | henriqueda.silva | DNBSCDC289770 | SQL Developer
-: 1180 | 40863   | ACTIVE   | danielhabib      | DNBSCDC289646 | JDBC Thin Client
-: 4011 | 15641   | INACTIVE | joao.katayama    | DNBSCDC289666 | SQL Developer
+: job_execution_id | short_context | serialized_context
+: -----------------+---------------+-------------------
+
+#+begin_src sql
+delete from BATCH5_STEP_EXECUTION where job_execution_id = 361
+#+end_src
+
+#+begin_src sql
+select step_execution_id,job_execution_id,step_name,create_time,end_time,last_updated,exit_code,status from BATCH5_STEP_EXECUTION
+order by last_updated desc
+FETCH FIRST 1 ROWS ONLY
+#+end_src
+
+#+begin_src sql
+select * from BATCH5_STEP_EXECUTION_CONTEXT where rownum = 1;
+#+end_src
+
+#+begin_src sql
+select * from BATCH5_JOB_INSTANCE
+order by job_instance_id des
+FETCH FIRST 5 ROWS ONLY
+#+end_src
+
+#+begin_src sql
+
+select *
+ from BATCH5_JOB_EXECUTION
+order by job_execution_id desc
+FETCH FIRST 5 ROWS ONLY;
+
+#+end_src
