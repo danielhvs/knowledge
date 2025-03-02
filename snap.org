@@ -1,0 +1,20 @@
+* info
+#+begin_src bash :results output
+snap info emacs
+#+end_src
+
+* revert for prev version:
+#+begin_src bash
+sudo snap revert emacs
+#+end_src
+
+* install from other "channel":
+#+begin_src sql
+sudo snap install emacs --channel=28.x/stable --classic
+#+end_src
+
+* prevent auto-update:
+
+#+begin_src sql
+snap refresh --hold=forever emacs
+#+end_src
