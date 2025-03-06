@@ -16,3 +16,30 @@ coder@cs:~$ kubectl get deploy
 NAME   READY   UP-TO-DATE   AVAILABLE   AGE
 cs     1/1     1            1           16h
 coder@cs:~$
+
+
+Whats the differnce betweeen kind deployments, pod and service?
+
+ In Kubernetes, `Deployments`, `Pods`, and `Services` have different roles:
+
+1. **Deployments**:
+   - A declarative way of managing and scaling your stateless applications.
+   - A Deployment creates and updates a group of identical Pods, ensuring that a specified number of Pods are always up and available.
+   - Provides features like rolling updates, rollbacks, and scaling while abstracting the underlying Pods from the user.
+
+2. **Pods**:
+   - The smallest deployable units in Kubernetes.
+   - Represents a running process on your cluster.
+   - Typically contains one or more containers that execute together to provide the application functionality.
+   - Pods are ephemeral and can be replaced when issues arise, or when updating or scaling your application.
+   - A single pod usually shares the same network namespace, which gives containers a unique IP address and DNS name.
+   - Pods often share the same host's physical resources.
+
+3. **Services**:
+   - An abstract way to expose an application running on a set of Pods.
+   - It acts as a stable IP address and DNS name to load balance and provide connectivity between Pods.
+   - Services allow traffic ingress from outside the cluster (NodePort, LoadBalancer, ExternalIP) or egress communication between Pods.
+   - Provides features like load balancing, service discovery, and failover for your applications.
+   - Services work with Label Selectors to communicate with the appropriate Pods.
+
+In summary, you might have multiple Pods as an instance of your application, grouped together within a Deployment and managed based on your needs. For these Pods to be accessible and have stable connectivity, you use a Kubernetes Service.
