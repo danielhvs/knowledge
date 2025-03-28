@@ -12,4 +12,6 @@ configuration file /etc/logrotate.conf
 
 The directives `weekly`, `dateext`, `compress`, `create`, and `rotate 4` state that log files are to be rotated weekly, that the date of rotation be used as the identifying suffix of the rotated files, that the rotated files should be compressed, that a new file is to be created to receive incoming logs, and that no more than four logs should be kept.
 
-there is a directive to include a particular folder: `/etc/logrotate.d`
+There is a directive to include a particular folder: `/etc/logrotate.d`
+
+crontab is already "always" configured with a call to logrotate every day at /etc/cron.daily/logrotate
