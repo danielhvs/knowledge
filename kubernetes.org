@@ -43,3 +43,8 @@ Whats the differnce betweeen kind deployments, pod and service?
    - Services work with Label Selectors to communicate with the appropriate Pods.
 
 In summary, you might have multiple Pods as an instance of your application, grouped together within a Deployment and managed based on your needs. For these Pods to be accessible and have stable connectivity, you use a Kubernetes Service.
+
+
+
+cool command to log
+kubectl logs deployments.apps/orchestrator-deployment --all-containers --follow
