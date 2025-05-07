@@ -24,4 +24,4 @@ sudo update-alternatives --install /usr/bin/java java /home/danielhabib/dev/jdk/
 
 ** select one to use
 
-sudo update-alternatives --config /usr/bin/java java /usr/lib/jvm/open-jdk-17/bin/java 2
+sudo update-alternatives --config java
