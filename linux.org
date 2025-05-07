@@ -20,7 +20,7 @@ crontab is already "always" configured with a call to logrotate every day at /et
 
 ** register a custom alternative
 
-sudo update-alternatives --install /usr/bin/java java /my/custom/bin/java 2
+sudo update-alternatives --install /usr/bin/java java /home/danielhabib/dev/jdk/jdk-21.0.2/bin/java 3
 
 ** select one to use
 
