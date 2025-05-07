@@ -15,3 +15,13 @@ The directives `weekly`, `dateext`, `compress`, `create`, and `rotate 4` state t
 There is a directive to include a particular folder: `/etc/logrotate.d`
 
 crontab is already "always" configured with a call to logrotate every day at /etc/cron.daily/logrotate
+
+* update-alternatives
+
+** register a custom alternative
+
+sudo update-alternatives --install /usr/bin/java java /my/custom/bin/java 2
+
+** select one to use
+
+sudo update-alternatives --config /usr/bin/java java /usr/lib/jvm/open-jdk-17/bin/java 2
