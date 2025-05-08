@@ -9,12 +9,17 @@ sudo snap revert emacs
 #+end_src
 
 * install from other "channel":
-#+begin_src sql
+#+begin_src bash
 sudo snap install emacs --channel=28.x/stable --classic
 #+end_src
 
 * prevent auto-update:
 
-#+begin_src sql
+#+begin_src bash
 snap refresh --hold=forever emacs
+#+end_src
+
+* list installed
+#+begin_src bash
+snap list
 #+end_src
