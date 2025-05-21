@@ -10,6 +10,9 @@ Menos latencia, menos interferencia, menos alcance.
 
 https://www.youtube.com/watch?v=MIRgMZHbOLE&t=398s
 Cabo de rede Cat 5e
+https://www.youtube.com/watch?v=RQ23x4XmhwQ
+TP-Link Deco M4! (Melhor Roteador Mesh)
+https://www.amazon.com.br/Roteador-Dispositivos-Deco-M4-Roteadores/dp/B07KJ2TDMR?ie=UTF8&linkCode=sl1&tag=avaliou21-20&linkId=e920348c47c7f37baa2a2ccdc40ece25&language=pt_BR&ref_=as_li_ss_tl
 
 * Network
 ** check which process is using a given `port`:
