@@ -1,3 +1,11 @@
+* Wifi
+
+** 2.4 GHz
+Mais latencia, mais interferencia, mais alcance.
+
+** 5 GHz
+Menos latencia, menos interferencia, menos alcance.
+
 * Network
 ** check which process is using a given `port`:
 
@@ -44,7 +52,6 @@ add:
 
 nameserver 8.8.8.8
 nameserver 8.8.4.4
-
 
 original:
 
