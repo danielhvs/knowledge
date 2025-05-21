@@ -6,6 +6,11 @@ Mais latencia, mais interferencia, mais alcance.
 ** 5 GHz
 Menos latencia, menos interferencia, menos alcance.
 
+* Mesh
+
+https://www.youtube.com/watch?v=MIRgMZHbOLE&t=398s
+Cabo de rede Cat 5e
+
 * Network
 ** check which process is using a given `port`:
 
