@@ -184,3 +184,7 @@ SELECT pg_size_pretty( pg_database_size('dbname') );
 #+begin_src sql
 SELECT pg_size_pretty( pg_total_relation_size('tablename') );
 #+end_src
+
+* config file
+
+/etc/postgresql/<version>/main
