@@ -188,3 +188,7 @@ SELECT pg_size_pretty( pg_total_relation_size('tablename') );
 * config file
 
 /etc/postgresql/<version>/main
+
+* other files
+
+/var/lib/postgresql/<version>/main/base/
