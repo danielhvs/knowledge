@@ -175,7 +175,11 @@ END;
 #+begin_src sql
 SELECT pg_size_pretty( pg_database_size('dbname') );
 #+end_src
-=>
+
+* drop databases
+
+drop database <db-name>;
+
  pg_size_pretty
 ----------------
  31 MB
