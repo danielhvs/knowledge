@@ -7,3 +7,13 @@ edit
 #+begin_src bash
 crontab -e
 #+end_src
+
+* logrotate
+usually logrotate resides in `/etc/cron.daily`
+
+* cron files:
+/etc/crontab
+/etc/cron.monthly
+/etc/cron.hourly
+/etc/cron.weekly
+/etc/cron.d
