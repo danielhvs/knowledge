@@ -16,3 +16,5 @@ usually logrotate resides in `/etc/cron.daily`
 
 ** executes:
 /usr/sbin/logrotate /etc/logrotate.conf
+
+** no need to restart anything because it just runs daily
