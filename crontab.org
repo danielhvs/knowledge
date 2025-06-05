@@ -11,9 +11,8 @@ crontab -e
 * logrotate
 usually logrotate resides in `/etc/cron.daily`
 
-* cron files:
-/etc/crontab
-/etc/cron.monthly
-/etc/cron.hourly
-/etc/cron.weekly
-/etc/cron.d
+* logrotate script file:
+`/etc/cron.daily/logrotate`
+
+** executes:
+/usr/sbin/logrotate /etc/logrotate.conf
