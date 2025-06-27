@@ -1,0 +1,8 @@
+list keys:
+
+127.0.0.1:6379> KEYS *
+
+remove keys:
+
+127.0.0.1:6379> FLUSHALL
+
