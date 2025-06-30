@@ -20,7 +20,7 @@ docker exec -it company_mongodb_1 bash
 
 /etc/default/docker
 
-* Remove all
+* Remove all processes
 #+begin_src bash :results output
 docker rm $(docker ps -aq)
 #+end_src
