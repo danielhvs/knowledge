@@ -1,8 +1,18 @@
-list keys:
+* list keys:
 
 127.0.0.1:6379> KEYS *
 
-remove keys:
+* remove ALL!!!
 
 127.0.0.1:6379> FLUSHALL
 
+* remove DB
+
+127.0.0.1:6379> FLUSHDB
+
+* remove cache (lua scripts)
+
+https://redis.io/docs/latest/commands/script-flush/
+By default, SCRIPT FLUSH will synchronously flush the cache.
+
+127.0.0.1:6379> SCRIPT FLUSH
