@@ -1,12 +1,10 @@
 * Constraints
 
 #+begin_src sql
-
-SELECT  constraint_name, constraint_type, search_condition, search_condition_vc
-FROM USER_CONSTRAINTS
-WHERE TABLE_NAME = '???';
-and owner='???'
-
+select cols.column_name, cons.* from all_constraints cons, all_cons_columns cols
+where cons.owner = '<...>'
+and cons.constraint_name = cols.constraint_name
+and cons.constraint_name = '<...>'
 #+end_src
 
 * all TABLES
