@@ -69,6 +69,15 @@ end
 SELECT s.sid, s.serial#, s.status, s.osuser, s.machine, s.program FROM v$session s where osuser not in('oracle', 'eco')
 #+end_src
 
+* current operations!
+#+begin_src sql
+SELECT S.MODULE, SN.OSUSER, SQL_TEXT
+    FROM SYS.V_$SQL S, SYS.ALL_USERS U, V$SESSION SN
+   WHERE S.PARSING_USER_ID = U.USER_ID
+     AND SN.sql_hash_value = S.hash_value
+     AND SN.sql_address = S.address
+   ORDER BY S.LAST_LOAD_TIME
+#+end_src
 
 * batch
 #+begin_src sql
