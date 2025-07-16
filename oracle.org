@@ -66,10 +66,25 @@ end
 * connections
 
 #+begin_src sql
-SELECT s.sid, s.serial#, s.status, s.osuser, s.machine, s.program FROM v$session s where osuser not in('oracle', 'eco')
+SELECT s.sid, s.serial#, s.status, s.osuser, s.machine, s.program FROM v$session s where osuser not in('oracle', 'eco') and status = 'ACTIVE'
 #+end_src
 
-* current operations!
+* Locks (maybe):
+#+begin_src sql
+SELECT
+    o.object_name,
+    o.object_type,
+ vlo.session_id,
+    vs.username,
+    vs.machine
+FROM
+ v$locked_object vlo
+JOIN
+ dba_objects o ON vlo.object_id = o.object_id
+JOIN
+ v$session vs ON vlo.session_id = vs.sid
+#+end_src
+
 #+begin_src sql
 SELECT S.MODULE, SN.OSUSER, SQL_TEXT
     FROM SYS.V_$SQL S, SYS.ALL_USERS U, V$SESSION SN
@@ -82,8 +97,8 @@ SELECT S.MODULE, SN.OSUSER, SQL_TEXT
 * db locks
 #+begin_src sql
 SELECT * FROM DBA_LOCKS
-where  session_id in (SELECT s.sid FROM v$session s where osuser not in('oracle', 'eco'))
-and lock_type = 'PL/SQL User Lock'
+where session_id in (SELECT s.sid FROM v$session s where osuser not in('oracle', 'eco'))
+and lock_type not like 'PL/SQL User Lock'
 #+end_src
 
 * batch
