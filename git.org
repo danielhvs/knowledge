@@ -30,3 +30,9 @@ B-4. Test your new git version as in A-4.
 * check after fixing the conflict (rebasing...)
 script to compare after fixing the merge conflict:
 git diff (original merge commit) current merge commit
+
+* clone without big files!
+
+git clone -n --depth=1 --branch t3 --filter=tree:0 https://gitlab.sig-gis.com/sig-gis/sig3.git && cd sig3 && git sparse-checkout set --no-cone .dockerignore /src .gitignore README.md /resources /dev /test deps.edn && git checkout
+
+https://scm.prevnet/andre.olivera/sispagben-jboss/
