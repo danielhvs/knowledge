@@ -82,3 +82,9 @@ docker compose -f file.yml -f file2.yml -p project start container-name
 #+begin_src bash
 docker exec -it infallible_shirley bash
 #+end_src
+
+* run bash 
+
+#+begin_src bash
+docker run --rm -it <image-name> /bin/bash
+#+end_src
