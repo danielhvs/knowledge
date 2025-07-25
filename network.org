@@ -87,3 +87,7 @@ nameserver 10.1.30.3
 
 nameserver 127.0.0.53
 options edns0 trust-ad
+
+* static IP_Address
+
+https://www.youtube.com/watch?v=0mfsE8t_7yY
