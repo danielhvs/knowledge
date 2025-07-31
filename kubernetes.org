@@ -48,3 +48,21 @@ In summary, you might have multiple Pods as an instance of your application, gro
 
 cool command to log
 kubectl logs deployments.apps/orchestrator-deployment --all-containers --follow
+
+* how to Kubernetes undeploy?
+
+ To undeploy a deployment in Kubernetes, you can use the =kubectl delete= command with the name of the deployment. For example:
+
+#+begin_src
+kubectl delete deployment <deployment-name>
+#+end_src
+
+This will delete the deployment and its associated resources, such as the replica sets and pods.
+
+If you want to delete the entire namespace, including all the resources in it, you can use the following command:
+
+#+begin_src
+kubectl delete namespace <namespace-name>
+#+end_src
+
+Keep in mind that deleting a namespace is a destructive action, and all the resources in it will be permanently deleted. Make sure to back up any important data before deleting a namespace.
