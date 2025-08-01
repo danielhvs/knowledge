@@ -85,7 +85,13 @@ docker exec -it infallible_shirley bash
 * run bash
 
 #+begin_src bash
-docker run --rm -it <image-name> /bin/bash
+docker run --rm -it <image-id> /bin/bash
+#+end_src
+
+* build and image:
+
+#+begin_src bash
+docker build -t my-image:tag .
 #+end_src
 
 * clear cache
