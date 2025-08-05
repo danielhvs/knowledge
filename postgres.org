@@ -196,3 +196,9 @@ SELECT pg_size_pretty( pg_total_relation_size('tablename') );
 * other files
 
 /var/lib/postgresql/<version>/main/base/
+
+* user permissions
+
+#+begin_src sql
+\du+
+#+end_src
