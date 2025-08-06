@@ -67,3 +67,8 @@ add:
 	}
 ```
 
+to use docker and apt together we need to configure the proxy like so, namely using a different IP rather than `localhost`:
+example: IP=172.21.134.LALA
+
+RUN sudo curl --proxy http://172.21.134.LALA:3128 -LsSf https://astral.sh/uv/0.7.7/install.sh -o install-uv.sh
+RUN apt -y update -oAcquire::http::Proxy=http://172.21.134.LALA:3128 -oAcquire::https::Proxy=http://172.21.134.LALA:3128 && apt -y upgrade && apt install -y curl rlwrap unzip
