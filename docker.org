@@ -76,15 +76,18 @@ docker compose -f file.yml -f file2.yml -p project up container-name
 docker compose -f file.yml -f file2.yml -p project start container-name
 #+end_src
 
-
 * To SSH into a Docker container that has been started from an image, you would typically use the =exec= command instead of =ssh=. Here's how you can do it for the =fidati-fe= image, assuming =container-name= is the name of the running container:
 
 #+begin_src bash
 docker exec -it infallible_shirley bash
 #+end_src
 
-* run bash 
+* run bash
 
 #+begin_src bash
 docker run --rm -it <image-name> /bin/bash
 #+end_src
+
+* clear cache
+
+docker builder prune
