@@ -102,3 +102,7 @@ docker builder prune
 #+begin_src bash
 docker tag old_image_name:old_tag new_image_name:new_tag
 #+end_src
+
+* get history metadata etc how the image was created dockerfile
+
+docker history --no-trunc <image>
