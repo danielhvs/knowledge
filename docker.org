@@ -96,7 +96,9 @@ docker build -t my-image:tag .
 
 * clear cache
 
+#+begin_src bash
 docker builder prune
+#+end_src
 
 * change tag
 #+begin_src bash
