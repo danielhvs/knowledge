@@ -1,3 +1,8 @@
+* logs per service
+#+begin_src bash :results output
+journalctl -f -u bla.service
+#+end_src
+
 * logs
 #+begin_src bash :results output
 journalctl | head -n10
