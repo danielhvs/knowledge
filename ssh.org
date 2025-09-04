@@ -1,0 +1,8 @@
+* generate private and public key
+ssh-keygen -t rsa -b 4096 -C "dsilva@lol.com"
+
+* copy the public key to the server:
+ssh-copy-id -i ~/.ssh/id_rsa dsilva@bla
+
+* just ssh into it and should work:
+ssh-copy-id -i ~/.ssh/id_rsa dsilva@bla
