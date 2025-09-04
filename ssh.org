@@ -9,3 +9,6 @@ ssh-copy-id -i ~/.ssh/id_rsa dsilva@bla
 
 * remove anoying message:
 ssh dsilva@lol -o StrictHostKeyChecking=no
+
+* execute as sudo remotely
+echo "<pwd>" | ssh user@server "sudo -S <command>"
