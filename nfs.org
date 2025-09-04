@@ -1,3 +1,9 @@
 * update /etc/exports file:
 After editing the exports file, export the shared directory by running sudo exportfs -a.
  Verify the export is active with sudo exportfs -v.
+
+* check mount (in server)
+
+ #+begin_src bash
+sudo showmount -e
+ #+end_src
