@@ -1,0 +1,3 @@
+* update /etc/exports file:
+After editing the exports file, export the shared directory by running sudo exportfs -a.
+ Verify the export is active with sudo exportfs -v.
