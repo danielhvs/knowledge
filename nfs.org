@@ -1,6 +1,12 @@
 * update /etc/exports file:
-After editing the exports file, export the shared directory by running sudo exportfs -a.
- Verify the export is active with sudo exportfs -v.
+
+The NFS server must be configured to export the desired directory, typically using the /etc/exports file, and the exports must be re-exported with
+
+#+begin_src bash
+exportfs -arv
+#+end_src
+
+after any changes
 
 * check mount (in server)
 
