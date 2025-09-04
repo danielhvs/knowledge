@@ -6,8 +6,6 @@ The NFS server must be configured to export the desired directory, typically usi
 exportfs -arv
 #+end_src
 
-after any changes
-
 * check mount (in server)
 
  #+begin_src bash
