@@ -1,3 +1,6 @@
+* Livro
+https://livro.descomplicandokubernetes.com.br/pt/
+
 * Links
 - [X] https://www.youtube.com/watch?v=TlHvYWVUZyc
 * List pods show
