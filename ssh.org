@@ -6,3 +6,6 @@ ssh-copy-id -i ~/.ssh/id_rsa dsilva@bla
 
 * just ssh into it and should work:
 ssh-copy-id -i ~/.ssh/id_rsa dsilva@bla
+
+* remove anoying message:
+ssh dsilva@lol -o StrictHostKeyChecking=no
