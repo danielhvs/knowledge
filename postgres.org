@@ -14,8 +14,10 @@ select column_name, is_nullable, data_type
 \l
 * Connect to a database
 \c db_name
-* List schemas
+* List tables
 \dt
+* List schemas
+\dn
 * Describe tables (in a schema):
 \dt schema_name.*
 * Describe a table (in a schema):
