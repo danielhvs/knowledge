@@ -206,3 +206,6 @@ SELECT pg_size_pretty( pg_total_relation_size('tablename') );
 #+begin_src sql
 \du+
 #+end_src
+
+* use schema
+SET search_path TO myschema
