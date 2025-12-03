@@ -69,20 +69,24 @@ end
 SELECT s.sid, s.serial#, s.status, s.osuser, s.machine, s.program FROM v$session s where osuser not in('oracle', 'eco') and status = 'ACTIVE'
 #+end_src
 
-* Locks (maybe):
+* Locks! Funcionou: precisou reiniciar a maquina
 #+begin_src sql
 SELECT
-    o.object_name,
-    o.object_type,
- vlo.session_id,
-    vs.username,
-    vs.machine
+  c.owner,
+  c.object_name,
+  c.object_type,
+  b.sid,
+  b.serial#,
+  b.status,
+  b.osuser,
+  b.machine
 FROM
- v$locked_object vlo
-JOIN
- dba_objects o ON vlo.object_id = o.object_id
-JOIN
- v$session vs ON vlo.session_id = vs.sid
+  v$locked_object a,
+  v$session b,
+  dba_objects c
+WHERE
+ b.sid = a.session_id
+  AND a.object_id = c.object_id;
 #+end_src
 
 #+begin_src sql
