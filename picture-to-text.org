@@ -1,7 +1,9 @@
 * https://superuser.com/questions/46730/convert-image-to-text
 You need to install "tesseract-ocr" on your Linux machine first.
 
+#+begin_src bash :dir /sudo:: :results output 
 sudo apt-get install tesseract-ocr
+#+end_src
 
 You can do it manually from the command line:
 
