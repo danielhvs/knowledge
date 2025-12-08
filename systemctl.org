@@ -13,3 +13,8 @@ journalctl | head -n10
 export SUDO_ASKPASS=/home/danielhabib/bin/ssh-askpass.sh
 sudo service postgresql restart
 #+end_src
+
+* config file
+
+/etc/systemd/system
+~/.config/systemd/
