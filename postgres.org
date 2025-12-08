@@ -209,3 +209,9 @@ SELECT pg_size_pretty( pg_total_relation_size('tablename') );
 
 * use schema
 SET search_path TO myschema
+
+* view logs queries
+
+#+begin_src bash :dir /sudo:: :results output
+sudo cat /var/log/postgresql/postgresql-*.log
+#+end_src
