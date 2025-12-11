@@ -275,3 +275,13 @@ order by job_execution_id desc
 FETCH FIRST 5 ROWS ONLY;
 
 #+end_src
+
+#+begin_src sql
+SELECT * FROM DBA_LOCKS
+where session_id in (SELECT s.sid FROM v$session s where osuser not in('oracle', 'eco'))
+#+end_src
+
+
+* Lock
+#+begin_src sql
+#+end_src
