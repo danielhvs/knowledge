@@ -1,3 +1,12 @@
 find . -name "*.mp3" -exec echo {} \;
 
 find . -maxdepth 2
+
+* nohup to detach the shell:
+
+nohup ./your_script.sh &
+
+By default, nohup redirects standard output and standard error to a file named nohup.out in the current directory. To
+avoid creating this file and suppress all output, redirect both stdout and stderr to /dev/null:
+
+nohup ./your_script.sh > /dev/null 2>&1 &
