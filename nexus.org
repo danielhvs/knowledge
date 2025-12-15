@@ -1,0 +1,11 @@
+* Add other custom Repositories in nexus3:
+
+1. Go to admin page -> Settings -> Repositories -> Repositories
+1. Click `+Create Repository`
+1. Click “Create repository” -> choose recipe “maven2 (proxy)”.
+1. Fill in at least:
+1.1 Name: clojars (or similar).
+1.1 Remote storage URL: https://clojars.org/repo/.
+1.1 Version: Mixed
+1. Leave other defaults as‑is and click “Create repository”.
+1. This tells Nexus how to reach Clojars as an upstream Maven repository.
