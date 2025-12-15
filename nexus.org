@@ -9,3 +9,4 @@
 1.1 Version: Mixed
 1. Leave other defaults as‑is and click “Create repository”.
 1. This tells Nexus how to reach Clojars as an upstream Maven repository.
+1. Add the custom repo to the maven-public group: go to maven-public and at the bottom add it then click `save`
