@@ -17,17 +17,17 @@ https://www.amazon.com.br/Roteador-Dispositivos-Deco-M4-Roteadores/dp/B07KJ2TDMR
 * Network
 ** check which process is using a given `port`:
 
-#+begin_src sh
-netstat -anpe | grep "8010" | grep "LISTEN"
+#+begin_src sh :dir /sudo:: :results output
+netstat -anpe | grep "5555" | grep "LISTEN"
 #+end_src
 
 ** get it's pid:
-#+begin_src sh
-netstat -anpe | grep "8010" | grep "LISTEN" | awk '{print $NF}' | cut -d'/' -f1
+#+begin_src sh :dir /sudo:: :results output
+netstat -anpe | grep "5555" | grep "LISTEN" | awk '{print $NF}' | cut -d'/' -f1
 #+end_src
 
 ** kill it already:
-#+begin_src sh
+#+begin_src sh :dir /sudo:: :results output
 netstat -anpe | grep "8010" | grep "LISTEN" | awk '{print $NF}' | cut -d'/' -f1 | xargs kill
 #+end_src
 
