@@ -25,6 +25,7 @@
 1. [mongo.md](mongo.md)
 1. [my-packages.org](my-packages.org)
 1. [network.org](network.org)
+1. [nexus.org](nexus.org)
 1. [nfs.org](nfs.org)
 1. [nginx.org](nginx.org)
 1. [nvidia](nvidia.org)
