@@ -8,6 +8,7 @@
 1. [elastic-search.md](elastic-search.md)
 1. [elixir.md](elixir.md)
 1. [emacs.md](emacs.md)
+1. [email.org](email.org)
 1. [firewall.md](firewall.md)
 1. [flatpak.org](flatpak.org)
 1. [git](git.org)

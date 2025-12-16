@@ -1,6 +1,6 @@
-* Testing 
+* Testing
 
-Use [etheral](https://ethereal.email) 
+Use [etheral](https://ethereal.email)
 Just create an email directly:
 1. Click create account
 2. Click the button to create a fake email
