@@ -21,10 +21,12 @@ https://www.amazon.com.br/Roteador-Dispositivos-Deco-M4-Roteadores/dp/B07KJ2TDMR
 netstat -anpe | grep "5555" | grep "LISTEN"
 #+end_src
 
+#+RESULTS:
+
 * the process command
 
 #+begin_src bash :results output
-ps -p 405572 -o start,time,cmd
+ps -p 10909 -o start,time,cmd
 #+end_src
 
 ** get it's pid:
@@ -34,7 +36,7 @@ netstat -anpe | grep "5555" | grep "LISTEN" | awk '{print $NF}' | cut -d'/' -f1
 
 ** kill it already:
 #+begin_src sh :dir /sudo:: :results output
-netstat -anpe | grep "8010" | grep "LISTEN" | awk '{print $NF}' | cut -d'/' -f1 | xargs kill
+netstat -anpe | grep "5555" | grep "LISTEN" | awk '{print $NF}' | cut -d'/' -f1 | xargs kill
 #+end_src
 
 * Wireless Adapter
