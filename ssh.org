@@ -12,3 +12,6 @@ ssh dsilva@lol -o StrictHostKeyChecking=no
 
 * execute as sudo remotely
 echo "<pwd>" | ssh user@server "sudo -S <command>"
+
+* port forward
+ssh -N -L localhost:8097:remote-host:8097 user@remote-host
