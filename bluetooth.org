@@ -15,7 +15,7 @@ sudo systemctl start bluetooth
 
 * Enter the cli interface:
 
-#+begin_src bash results :output
+#+begin_src bash :results output
 bluetoothctl
 #+end_src
 
