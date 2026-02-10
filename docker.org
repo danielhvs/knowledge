@@ -137,3 +137,9 @@ Can pass the config file via cli with:
 docker --config /home/danielhabib/.docker
 
 Even though the file resides in /home/danielhabib/.docker/config.json
+
+* custom config file
+
+Actually it is the dir.
+Must have a config.json file inside of it:
+export DOCKER_CONFIG="/home/danielhabib/.docker/"
