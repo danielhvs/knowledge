@@ -108,3 +108,25 @@ docker tag old_image_name:old_tag new_image_name:new_tag
 * get history metadata etc how the image was created dockerfile
 
 docker history --no-trunc <image>
+
+* credentials fixup for docker after installing it
+
+Step-by-Step Fix
+
+Create or verify the docker group:
+sudo groupadd docker
+
+Add your user:
+sudo usermod -aG docker $USER
+
+Apply the changes: For the changes to take effect, you usually need to log out and log back in. Alternatively, you can run this command to refresh the group membership for the current terminal session:
+newgrp docker
+
+Test:
+docker ps
+
+or
+docker run --rm hello-world
+
+Restart docker
+sudo systemctl restart docker
