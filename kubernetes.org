@@ -20,7 +20,6 @@ NAME   READY   UP-TO-DATE   AVAILABLE   AGE
 cs     1/1     1            1           16h
 coder@cs:~$
 
-
 Whats the differnce betweeen kind deployments, pod and service?
 
  In Kubernetes, `Deployments`, `Pods`, and `Services` have different roles:
@@ -47,10 +46,16 @@ Whats the differnce betweeen kind deployments, pod and service?
 
 In summary, you might have multiple Pods as an instance of your application, grouped together within a Deployment and managed based on your needs. For these Pods to be accessible and have stable connectivity, you use a Kubernetes Service.
 
-
-
 cool command to log
 kubectl logs deployments.apps/orchestrator-deployment --all-containers --follow
+
+* request cpu and memory
+
+How Kubernetes Interprets Your Config
+
+requests (The Guarantee): This tells the Kubernetes scheduler, "Do not place this Pod on a Node unless it has at least 8 CPUs and 8Gi of RAM available." It is used for scheduling decisions.
+
+limits (The Ceiling): This tells the Node's container runtime, "If this Pod tries to use more than 8 CPUs or 8Gi of RAM, throttle it (CPU) or kill it (Memory)."
 
 * how to Kubernetes undeploy?
 
