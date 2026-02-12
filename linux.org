@@ -1,6 +1,16 @@
 * sudo
 -E flag preserves Environment args! So `sudo -E bla bla` will use $http_proxy etc for example.
 
+** run command as sudo without password:
+register the command in /etc/sudoers
+
+#+begin_src emacs-lisp
+(find-file "/sudo:root@localhost:/etc/sudoers")
+#+end_src
+
+edit /etc/sudoers
+danielhabib ALL=(ALL) NOPASSWD: /home/danielhabib/bin/mobile.sh
+
 * rm
 removing with the -f (force) flag does not raises an error if a file does not exist!
 
