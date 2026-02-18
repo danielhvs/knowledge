@@ -140,3 +140,7 @@ Even though the file resides in /home/danielhabib/.docker/config.json
 Actually it is the dir.
 Must have a config.json file inside of it:
 export DOCKER_CONFIG="/home/danielhabib/.docker/"
+
+* snap issue:
+
+when installing via snap I need to symlink ~/.docker/config.json to ~/snap/docker/current/.docker/config.json
