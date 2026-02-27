@@ -37,3 +37,5 @@ Field meanings:
     comment (GECOS) – Free-form info about the user (full name, phone, etc.).
     home_directory – Absolute path to the user’s home, e.g. /home/alice.
     login_shell – Path to the user’s default shell, e.g. /bin/bash, /bin/zsh, or /usr/sbin/nologin.
+# tar
+tar -cvzf archive_name.tar.gz /path/to/directory
