@@ -44,3 +44,10 @@ tar -cvzf archive_name.tar.gz /path/to/directory
 WARNING! be inside the dir and use relative path!
 like so:
 /home/danielhabib/lol $ tar -cvzf archive_name.tar.gz the-dir
+
+```bash
+comm -23 <(find dir1 -type f -printf '%P\n' | sort) <(find dir2 -type f -printf '%P\n' | sort)
+    %P: Prints path relative to starting dir (drops ./dir1/ prefix).
+    comm -13: Only in dir2.
+    comm -12: In both (matching relative paths).
+```
