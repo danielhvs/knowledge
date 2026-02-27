@@ -40,3 +40,7 @@ Field meanings:
 # tar
 a directory:
 tar -cvzf archive_name.tar.gz /path/to/directory
+
+WARNING! be inside the dir and use relative path!
+like so:
+/home/danielhabib/lol $ tar -cvzf archive_name.tar.gz the-dir
