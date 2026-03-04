@@ -96,6 +96,22 @@ nameserver 10.1.30.3
 nameserver 127.0.0.53
 options edns0 trust-ad
 
+* ports and stuff
+
+in addition to `iptables`, you can also allow unprivileged users to bind low ports with `sysctl` like so:
+
+```
+################################################################################
+# Allow unprivileged processes to bind ports >=20
+################################################################################
+echo 'net.ipv4.ip_unprivileged_port_start=20' > /etc/sysctl.d/50-unprivileged-ports.conf
+sysctl --system
+```
+
+This is how we solve this particular problem on our GCP machines. :wink:
+
+NOTE: You'll need to run this with `sudo`, of course.
+
 * static IP_Address
 
 https://www.youtube.com/watch?v=0mfsE8t_7yY
