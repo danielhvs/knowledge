@@ -98,6 +98,14 @@ options edns0 trust-ad
 
 * ports and stuff
 
+** java
+
+sudo setcap 'cap_net_bind_service=+sp' $(readlink -f $(which java))
+
+This grants Java the ability to bind to privileged ports (< 1624) without running as root. After that, bb dev should start normally and your origin will be http://local-pyrecast.org (no port suffix), matching what the CORS config on geoserver-dev already allows.
+
+** gary
+
 in addition to `iptables`, you can also allow unprivileged users to bind low ports with `sysctl` like so:
 
 ```
