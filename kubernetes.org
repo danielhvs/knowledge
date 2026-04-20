@@ -57,6 +57,20 @@ requests (The Guarantee): This tells the Kubernetes scheduler, "Do not place thi
 
 limits (The Ceiling): This tells the Node's container runtime, "If this Pod tries to use more than 8 CPUs or 8Gi of RAM, throttle it (CPU) or kill it (Memory)."
 
+* limits in kubernetes
+
+** get the names of the configured limits:
+
+#+begin_src bash
+kubectl get limitrange -n <namespace>
+#+end_src
+
+** get the limit
+
+#+begin_src bash
+kubectl describe limitrange <name> -n <namespace>
+#+end_src
+
 * how to Kubernetes undeploy?
 
  To undeploy a deployment in Kubernetes, you can use the =kubectl delete= command with the name of the deployment. For example:
