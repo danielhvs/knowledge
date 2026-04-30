@@ -14,6 +14,7 @@
 1. [git](git.org)
 1. [glib-c-ubuntu.org](glib-c-ubuntu.org)
 1. [google-analytics.org](google-analytics.org)
+1. [gcp.md](gcp.md)
 1. [hd-cleanup.md](hd-cleanup.md)
 1. [i3.org](i3.org)
 1. [java.md](java.md)
@@ -49,3 +50,4 @@
 1. [windows](windows.org)
 1. [wsl.org](wsl.org)
 1. [yarn.org](yarn.org)
+1. [sonar.md](sonar.md)

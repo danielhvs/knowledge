@@ -1,0 +1,7 @@
+* gsutil
+** disk size
+#+begin_src bash
+
+gsutil du -sh gs://BUCKET_NAME
+
+#+end_src
