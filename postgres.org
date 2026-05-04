@@ -215,3 +215,14 @@ SET search_path TO myschema
 #+begin_src bash :dir /sudo:: :results output
 sudo cat /var/log/postgresql/postgresql-*.log
 #+end_src
+
+* functions
+
+#+begin_src sql
+
+SELECT routine_name, routine_type, routine_schema
+FROM information_schema.routines
+WHERE routine_schema = 'public'
+  AND routine_type = 'FUNCTION';
+
+#+end_src
