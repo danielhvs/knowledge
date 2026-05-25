@@ -120,6 +120,14 @@ This is how we solve this particular problem on our GCP machines. :wink:
 
 NOTE: You'll need to run this with `sudo`, of course.
 
+* problem with my laptop: network wifi just stopped!!!
+
+samsung
+ubuntu 24.04
+
+solve it with:
+sudo apt install --reinstall linux-modules-extra-$(uname -r)
+
 * static IP_Address
 
 https://www.youtube.com/watch?v=0mfsE8t_7yY
