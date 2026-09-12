@@ -1,7 +1,7 @@
 ---
 title:      "trip to swiss"
 date:       2026-09-12T11:37:43-03:00
-tags:       ["places", "trip", "zurich"]
+tags:       ["places", "swiss", "trip", "zurich"]
 identifier: "20260912T113743"
 ---
 
