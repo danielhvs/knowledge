@@ -1,0 +1,50 @@
+#+title:      oracle sessions and locks
+#+date:       [2026-10-12 Mon 13:30]
+#+filetags:   :database:lock:oracle:sql:
+#+identifier: 20261012T133000
+
+* connections
+
+#+begin_src sql
+SELECT s.sid, s.serial#, s.status, s.osuser, s.machine, s.program FROM v$session s where osuser not in('oracle', 'eco') and status = 'ACTIVE'
+#+end_src
+
+* Locks! Funcionou: precisou reiniciar a maquina
+#+begin_src sql
+SELECT
+  c.owner,
+  c.object_name,
+  c.object_type,
+  b.sid,
+  b.serial#,
+  b.status,
+  b.osuser,
+  b.machine
+FROM
+  v$locked_object a,
+  v$session b,
+  dba_objects c
+WHERE
+ b.sid = a.session_id
+  AND a.object_id = c.object_id;
+#+end_src
+
+#+begin_src sql
+SELECT S.MODULE, SN.OSUSER, SQL_TEXT
+    FROM SYS.V_$SQL S, SYS.ALL_USERS U, V$SESSION SN
+   WHERE S.PARSING_USER_ID = U.USER_ID
+     AND SN.sql_hash_value = S.hash_value
+     AND SN.sql_address = S.address
+   ORDER BY S.LAST_LOAD_TIME
+#+end_src
+
+* db locks
+#+begin_src sql
+SELECT * FROM DBA_LOCKS
+where session_id in (SELECT s.sid FROM v$session s where osuser not in('oracle', 'eco'))
+and lock_type not like 'PL/SQL User Lock'
+#+end_src
+
+* Lock
+#+begin_src sql
+#+end_src

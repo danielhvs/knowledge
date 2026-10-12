@@ -18,7 +18,7 @@ I think commands can start with uppercase when local
 (get-buffer-create "bla")
 
 
-# Install emacs 29.4 from scractch:
+# Install emacs 29.4 from scratch:
 # source: https://andrewmemory.wordpress.com/2024/08/24/building-emacs-29-4-on-ubuntu-22-04/
 
 # We want to build it from scratch so we have more control

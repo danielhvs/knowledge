@@ -1,0 +1,38 @@
+#+title:      wifi and mesh
+#+date:       [2026-10-12 Mon 13:30]
+#+filetags:   :network:wifi:
+#+identifier: 20261012T133007
+
+* Wifi
+
+** 2.4 GHz
+Mais latencia, mais interferencia, mais alcance.
+
+** 5 GHz
+Menos latencia, menos interferencia, menos alcance.
+
+* Mesh
+
+https://www.youtube.com/watch?v=MIRgMZHbOLE&t=398s
+Cabo de rede Cat 5e
+https://www.youtube.com/watch?v=RQ23x4XmhwQ
+TP-Link Deco M4! (Melhor Roteador Mesh)
+https://www.amazon.com.br/Roteador-Dispositivos-Deco-M4-Roteadores/dp/B07KJ2TDMR?ie=UTF8&linkCode=sl1&tag=avaliou21-20&linkId=e920348c47c7f37baa2a2ccdc40ece25&language=pt_BR&ref_=as_li_ss_tl
+
+* Wireless Adapter
+
+https://github.com/aircrack-ng/rtl8188eus
+
+make clean && make && sudo make install
+
+* problem with my laptop: network wifi just stopped!!!
+
+samsung
+ubuntu 24.04
+
+solve it with:
+sudo apt install --reinstall linux-modules-extra-$(uname -r)
+
+* static IP_Address
+
+https://www.youtube.com/watch?v=0mfsE8t_7yY

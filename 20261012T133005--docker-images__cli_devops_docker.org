@@ -1,0 +1,42 @@
+#+title:      docker images
+#+date:       [2026-10-12 Mon 13:30]
+#+filetags:   :cli:devops:docker:
+#+identifier: 20261012T133005
+
+* Login to [dockerhub](https://hub.docker.com/)
+
+#+begin_src bash
+docker login
+#+end_src
+
+* To remove all Docker images from your local machine, you can use the following command in your terminal:
+
+#+begin_src bash
+docker rmi $(docker images -a -q)
+#+end_src
+
+* Show all images
+#+begin_src bash
+docker images -a
+#+end_src
+
+* build an image:
+
+#+begin_src bash
+docker build -t my-image:tag .
+#+end_src
+
+* clear cache
+
+#+begin_src bash
+docker builder prune
+#+end_src
+
+* change tag
+#+begin_src bash
+docker tag old_image_name:old_tag new_image_name:new_tag
+#+end_src
+
+* get history metadata etc how the image was created dockerfile
+
+docker history --no-trunc <image>

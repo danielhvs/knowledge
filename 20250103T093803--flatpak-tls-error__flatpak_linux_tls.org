@@ -1,0 +1,13 @@
+#+title:      flatpak tls error
+#+date:       [2025-01-03 Fri 09:38]
+#+filetags:   :flatpak:linux:tls:
+#+identifier: 20250103T093803
+
+* Solve TLS error
+
+https://github.com/flatpak/flatpak/issues/1207#issuecomment-1132724817
+
+After looking at #1207 (comment) answer I found out that it may be because the gio module dir is not correctly defined.
+I tried
+export GIO_MODULE_DIR=/usr/lib/x86_64-linux-gnu/gio/modules/
+and then flatpak worked

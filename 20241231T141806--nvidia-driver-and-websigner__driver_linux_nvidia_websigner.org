@@ -1,0 +1,32 @@
+#+title:      nvidia driver and websigner
+#+date:       [2024-12-31 Tue 14:18]
+#+filetags:   :driver:linux:nvidia:websigner:
+#+identifier: 20241231T141806
+
+It's different between i3 and gnome-shell!
+
+Try:
+/opt/softplan-websigner/websigner
+
+Actually the difference is between allacrity and gnome-shell
+
+* X Server Error Msg:
+  You appear to be running an X server.  Installing the NVIDIA driver while X is running is not recommended, as doing so may prevent the installer
+  from detecting some potential installation problems, and it may not be possible to start new graphics applications after a new driver is installed.
+  If you choose to continue installation, it is highly recommended that you reboot your computer after installation to use the newly installed
+  driver.
+
+                                        Continue installation                             Abort installation
+
+* Tried to install via additional drivers in gnome-shell
+
+Looks like the installation was fine though there is an error now appearing in the console in init...
+
+* Allacrity
+
+To make the thing work in allacrity I'll try:
+sudo apt-get install g++ pkg-config libx11-dev libasound2-dev libudev-dev libxkbcommon-x11-0
+
+Didn't work
+
+* https://casadopinduvoz.wordpress.com/2018/06/14/certificado-digital-peticionamento-eletronico-linux-atual-64-bits/

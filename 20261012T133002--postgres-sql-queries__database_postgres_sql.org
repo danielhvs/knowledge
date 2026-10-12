@@ -1,0 +1,78 @@
+#+title:      postgres sql queries
+#+date:       [2026-10-12 Mon 13:30]
+#+filetags:   :database:postgres:sql:
+#+identifier: 20261012T133002
+
+* Links
+# Links
+1. https://www.postgresql.org/docs/9.5/functions-json.html
+1. https://www.cybertec-postgresql.com/en/recursive-queries-postgresql/
+* General info about the tables
+#+begin_src sql :results output
+select column_name, is_nullable, data_type
+  FROM information_schema.columns
+ WHERE table_schema = 'terraontrack'
+#+end_src
+* User
+#+begin_src sql :results output
+SELECT current_user;
+#+end_src
+* Views
+#+begin_src sql :results output
+select viewname
+from pg_catalog.pg_views
+where viewname like '%bla%';
+#+end_src
+* indexes
+#+begin_src sql :results output
+SELECT
+    tablename,
+    indexname,
+    indexdef
+FROM
+    pg_indexes
+WHERE
+    schemaname = 'schemaname'
+ORDER BY
+    tablename,
+    indexname;
+#+end_src
+* select as json
+#+begin_src sql :results output
+SELECT jsonb_pretty(to_jsonb(json_agg(table_name))) FROM table_name;
+select row_to_json(row) from <schema>.<tablename> row
+#+end_src
+* types
+#+begin_src sql :results output
+SELECT pg_typeof(your_variable);
+#+end_src
+* All table names
+#+begin_src sql
+SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' ORDER BY table_name;
+#+end_src
+* hd size it occupies
+#+begin_src sql
+SELECT pg_size_pretty( pg_database_size('dbname') );
+#+end_src
+
+* drop databases
+
+drop database <db-name>;
+
+ pg_size_pretty
+----------------
+ 31 MB
+ (1 row)
+* hd size it occupies (per table)
+#+begin_src sql
+SELECT pg_size_pretty( pg_total_relation_size('tablename') );
+#+end_src
+
+* user permissions
+
+#+begin_src sql
+\du+
+#+end_src
+
+* use schema
+SET search_path TO myschema

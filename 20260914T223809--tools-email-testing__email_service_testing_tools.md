@@ -7,7 +7,7 @@ identifier: "20260914T223809"
 
 # Testing email
 
-I can use [etheral](https://ethereal.email)
+I can use [ethereal](https://ethereal.email)
 
 Just create an email directly:
 

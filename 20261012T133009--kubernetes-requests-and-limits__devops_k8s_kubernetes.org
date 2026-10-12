@@ -1,0 +1,26 @@
+#+title:      kubernetes requests and limits
+#+date:       [2026-10-12 Mon 13:30]
+#+filetags:   :devops:k8s:kubernetes:
+#+identifier: 20261012T133009
+
+* request cpu and memory
+
+How Kubernetes Interprets Your Config
+
+requests (The Guarantee): This tells the Kubernetes scheduler, "Do not place this Pod on a Node unless it has at least 8 CPUs and 8Gi of RAM available." It is used for scheduling decisions.
+
+limits (The Ceiling): This tells the Node's container runtime, "If this Pod tries to use more than 8 CPUs or 8Gi of RAM, throttle it (CPU) or kill it (Memory)."
+
+* limits in kubernetes
+
+** get the names of the configured limits:
+
+#+begin_src bash
+kubectl get limitrange -n <namespace>
+#+end_src
+
+** get the limit
+
+#+begin_src bash
+kubectl describe limitrange <name> -n <namespace>
+#+end_src

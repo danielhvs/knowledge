@@ -1,0 +1,69 @@
+#+title:      oracle sql metadata queries
+#+date:       [2024-09-04 Wed 12:53]
+#+filetags:   :database:oracle:sql:
+#+identifier: 20240904T125346
+
+* Constraints
+
+#+begin_src sql
+select cols.column_name, cons.* from all_constraints cons, all_cons_columns cols
+where cons.owner = '<...>'
+and cons.constraint_name = cols.constraint_name
+and cons.constraint_name = '<...>'
+#+end_src
+
+* all TABLES
+#+begin_src sql
+select distinct(table_name)
+from
+  all_tab_columns
+where owner='EGF'
+#+end_src
+
+* some metadata from a TABLE
+#+begin_src sql
+select
+  column_name,
+  table_name,
+  nullable,
+  data_type,
+  data_length,
+  data_precision,
+  data_scale
+from
+  all_tab_columns
+where
+  table_name = 'PARAMETROS'
+#+end_src
+
+* all metadata from a TABLE
+#+begin_src sql
+select
+  *
+from
+  all_tab_columns
+where
+  table_name = 'the-column-name'
+#+end_src
+
+* select procedure contents:
+#+begin_src sql
+SELECT text
+FROM user_source
+WHERE name = 'caseSENSITIVEprocName'
+ORDER BY line
+#+end_src
+
+* limit: FETCH FIRST n ROWS ONLY
+#+begin_src sql
+select * from log
+order by created_at desc
+FETCH FIRST 5 ROWS ONLY
+#+end_src
+
+* Execute procedure:
+#+begin_src sql
+begin
+    schema.procedure_name()
+end
+#+end_src

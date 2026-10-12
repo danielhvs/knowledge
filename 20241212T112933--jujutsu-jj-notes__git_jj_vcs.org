@@ -26,6 +26,6 @@ Hint: Run `jj bookmark track desenvolvimento@origin incidente-vale-esse@origin` 
 jj bookmark track incidente-tmp@origin
 
 Show  much logs and then look for the commits.
-Then lookg for the given "working" tag to use in describe command
+Then look for the given "working" tag to use in describe command
 jj log -r incidente-tmp..3b8173b2d10b4e664d50b911681ebdd4a8a10629
 jj log -r 3b8173b2d10b4e664d50b911681ebdd4a8a10629..incidente-tmp

@@ -1,0 +1,8 @@
+#+title:      my packages
+#+date:       [2025-02-25 Tue 08:19]
+#+filetags:   :install:linux:packages:
+#+identifier: 20250225T081958
+
+* fd-find:
+
+cd ~/dev && wget https://github.com/sharkdp/fd/releases/download/v10.2.0/fd_10.2.0_amd64.deb && sudo dpkg -i fd_10.2.0_amd64.deb

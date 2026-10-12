@@ -17,7 +17,7 @@ edit /etc/sudoers
 danielhabib ALL=(ALL) NOPASSWD: /home/danielhabib/bin/mobile.sh
 
 * rm
-removing with the -f (force) flag does not raises an error if a file does not exist!
+removing with the -f (force) flag does not raise an error if a file does not exist!
 
 * logrotate
 
