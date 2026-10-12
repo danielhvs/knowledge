@@ -1,0 +1,22 @@
+#+title:      ssh keys and tips
+#+date:       [2025-09-04 Thu 11:57]
+#+filetags:   :cli:ssh:
+#+identifier: 20250904T115716
+
+* generate private and public key
+ssh-keygen -t rsa -b 4096 -C "dsilva@lol.com"
+
+* copy the public key to the server:
+ssh-copy-id -i ~/.ssh/id_rsa dsilva@bla
+
+* just ssh into it and should work:
+ssh-copy-id -i ~/.ssh/id_rsa dsilva@bla
+
+* remove anoying message:
+ssh dsilva@lol -o StrictHostKeyChecking=no
+
+* execute as sudo remotely
+echo "<pwd>" | ssh user@server "sudo -S <command>"
+
+* port forward
+ssh -N -L localhost:8097:remote-host:8097 user@remote-host

@@ -1,0 +1,12 @@
+#+title:      gcp gsutil
+#+date:       [2026-04-30 Thu 09:25]
+#+filetags:   :cloud:gcp:gsutil:
+#+identifier: 20260430T092520
+
+* gsutil
+** disk size
+#+begin_src bash
+
+gsutil du -sh gs://BUCKET_NAME
+
+#+end_src

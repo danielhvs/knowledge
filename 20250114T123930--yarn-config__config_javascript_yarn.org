@@ -1,0 +1,16 @@
+#+title:      yarn config
+#+date:       [2025-01-14 Tue 12:39]
+#+filetags:   :config:javascript:yarn:
+#+identifier: 20250114T123930
+
+* Config
+** List
+
+#+begin_src bash
+yarn config list
+#+end_src
+
+** Set values
+#+begin_src bash
+yarn config set strict-ssl false
+#+end_src

@@ -1,0 +1,60 @@
+#+title:      react hooks notes
+#+date:       [2024-10-23 Wed 08:19]
+#+filetags:   :hooks:javascript:react:
+#+identifier: 20241023T081959
+
+* React Tools
+
+build sets env vars... NODE_ENV to production or development
+
+also maybe sets PUBLIC_URL env var!
+
+* General
+
+IN REACT: a function is always different from itself!
+(that's because it's going to be "redefined", i.e, the code will re-run thus creating another "pointer")
+
+* useEffect
+
+Always run once at `component-mount`
+
+args:
+1. function
+2. dependency args (vector)
+
+returns:
+return (optionally) a function to be run in component `will-unmount`
+
+* useMemo
+
+https://www.youtube.com/watch?v=vpE9I_eqHdM&list=PLApy4UwQM3UrZsBTY111R6P4frt6WK-G2&index=3
+
+memoizes a value
+
+has a deps array as well so it can re-run to update the value
+
+const selectedValue = useMemo(
+    () => items.find(...),
+    [items]);
+
+`memo` (not `useMemo`) can wrap a component! (in which case it's going to re-render only if the component's props change)
+
+export bla return memo(Component);
+
+* useCallback
+
+https://www.youtube.com/watch?v=MxIPQZ64x0I&t=55s
+
+useCallback will "freeze" a function so that it behaves as "data": same content, same function.
+this solves the problem when a component is wrapped in `memo`
+
+* useQuery
+
+https://www.youtube.com/watch?v=8K1N3fE-cDs
+
+invalidate!
+[query-key a string, query-arg1, query-arg2 ...]
+
+invalidate! on success of a `mutation`
+
+!!!! use staleTime: infinity to avoiding fetching in the background

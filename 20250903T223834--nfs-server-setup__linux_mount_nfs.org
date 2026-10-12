@@ -1,0 +1,18 @@
+#+title:      nfs server setup
+#+date:       [2025-09-03 Wed 22:38]
+#+filetags:   :linux:mount:nfs:
+#+identifier: 20250903T223834
+
+* update /etc/exports file:
+
+The NFS server must be configured to export the desired directory, typically using the /etc/exports file, and the exports must be re-exported with
+
+#+begin_src bash
+exportfs -arv
+#+end_src
+
+* check mount (in server)
+
+ #+begin_src bash
+sudo showmount -e
+ #+end_src

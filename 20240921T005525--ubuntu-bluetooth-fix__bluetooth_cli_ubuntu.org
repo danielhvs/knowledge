@@ -1,0 +1,32 @@
+#+title:      ubuntu bluetooth fix
+#+date:       [2024-09-21 Sat 00:55]
+#+filetags:   :bluetooth:cli:ubuntu:
+#+identifier: 20240921T005525
+
+https://askubuntu.com/questions/1215009/ubuntu-18-04-cannot-connect-bluetooth-to-android-phone
+
+* Check if Bluetooth is enabled:
+
+#+begin_src bash :results output
+systemctl is-active bluetooth
+#+end_src
+
+* If it's not active, enable it:
+
+#+begin_src bash :results output
+export SUDO_ASKPASS=/home/danielhabib/bin/ssh-askpass.sh
+sudo systemctl start bluetooth
+#+end_src
+
+* Enter the cli interface:
+
+#+begin_src bash :results output
+bluetoothctl
+#+end_src
+
+** make device discoverable (press and hold both for 6 seconds for example)
+** run command `scan on`
+** find the device
+** run command `trust [MAC]`
+** run command `pair [MAC]`
+** DONE

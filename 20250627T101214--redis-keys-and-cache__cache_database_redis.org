@@ -1,0 +1,23 @@
+#+title:      redis keys and cache
+#+date:       [2025-06-27 Fri 10:12]
+#+filetags:   :cache:database:redis:
+#+identifier: 20250627T101214
+
+* list keys:
+
+127.0.0.1:6379> KEYS *
+
+* remove ALL!!!
+
+127.0.0.1:6379> FLUSHALL
+
+* remove DB
+
+127.0.0.1:6379> FLUSHDB
+
+* remove cache (lua scripts)
+
+https://redis.io/docs/latest/commands/script-flush/
+By default, SCRIPT FLUSH will synchronously flush the cache.
+
+127.0.0.1:6379> SCRIPT FLUSH
