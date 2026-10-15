@@ -1,5 +1,5 @@
 ---
-title:      "english"
+title:      "english-ballpark"
 date:       2026-10-15T11:11:45-03:00
 tags:       ["agile", "corporate", "english", "jargon"]
 identifier: "20261015T111145"
