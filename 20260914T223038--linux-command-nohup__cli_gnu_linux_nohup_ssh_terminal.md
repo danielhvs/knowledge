@@ -8,7 +8,13 @@ identifier: "20260914T223038"
 # nohup to detach the shell
 
 ## writes both `stdout` and `stderr` to `nohup.out`:
-`nohup ./your_script.sh &`
+
+```
+nohup ./your_script.sh &
+```
 
 ## to avoid writing to `nohup.out`, just redirect `stdout` and `stderr` to `/dev/null`:
-`nohup ./your_script.sh > /dev/null 2>&1 &`
+
+```
+nohup ./your_script.sh > /dev/null 2>&1 &
+```
