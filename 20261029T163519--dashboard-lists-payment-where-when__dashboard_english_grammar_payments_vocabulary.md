@@ -5,9 +5,6 @@ tags:       ["dashboard", "english", "grammar", "payments", "vocabulary"]
 identifier: "20261029T163519"
 ---
 
-hen
-tags: english payments vocabulary dashboard grammar
-
 The sentence means the dashboard shows the place and time of a payment, but the verb "lit" is unusual in this context.
 
 "Lit" is the past tense of "light," as in a fire that was lit. Slang uses "lit" to mean exciting, and "lit up" means illuminated. None of these fits a payment, so the author probably meant "logged," "recorded," or "triggered."
